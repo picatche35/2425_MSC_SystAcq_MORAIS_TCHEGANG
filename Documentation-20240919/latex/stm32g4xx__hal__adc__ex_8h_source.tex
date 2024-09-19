@@ -1,0 +1,849 @@
+\doxysection{stm32g4xx\+\_\+hal\+\_\+adc\+\_\+ex.\+h}
+\hypertarget{stm32g4xx__hal__adc__ex_8h_source}{}\label{stm32g4xx__hal__adc__ex_8h_source}\index{C:/Users/eugen/Documents/3A/SystAcq/2425\_MSC\_SystAcq\_MORAIS\_TCHEGANG/NUCLEO-\/G474RET6-\/Inverter\_Pinout/Drivers/STM32G4xx\_HAL\_Driver/Inc/stm32g4xx\_hal\_adc\_ex.h@{C:/Users/eugen/Documents/3A/SystAcq/2425\_MSC\_SystAcq\_MORAIS\_TCHEGANG/NUCLEO-\/G474RET6-\/Inverter\_Pinout/Drivers/STM32G4xx\_HAL\_Driver/Inc/stm32g4xx\_hal\_adc\_ex.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00019\ \textcolor{comment}{/*\ Define\ to\ prevent\ recursive\ inclusion\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#ifndef\ STM32G4xx\_HAL\_ADC\_EX\_H}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ STM32G4xx\_HAL\_ADC\_EX\_H}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00024\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}stm32g4xx\_hal\_def.h"{}}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00038\ \textcolor{comment}{/*\ Exported\ types\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00046\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00047\ \{}
+\DoxyCodeLine{00048\ \ \ uint32\_t\ \mbox{\hyperlink{struct_a_d_c___inj_oversampling_type_def_a3077192b862928c886342eff559a5060}{Ratio}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00051\ \ \ uint32\_t\ \mbox{\hyperlink{struct_a_d_c___inj_oversampling_type_def_aefe03ebb5a5b9f1b203a293884687a49}{RightBitShift}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00053\ \}\ \mbox{\hyperlink{struct_a_d_c___inj_oversampling_type_def}{ADC\_InjOversamplingTypeDef}};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00080\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00081\ \{}
+\DoxyCodeLine{00082\ \ \ uint32\_t\ \mbox{\hyperlink{struct_a_d_c___injection_conf_type_def_aad0cab6ed3f66e8ffa4bd0490298b715}{InjectedChannel}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00088\ \ \ uint32\_t\ \mbox{\hyperlink{struct_a_d_c___injection_conf_type_def_af8a1717c0f5a5d0c7a705224f28a844f}{InjectedRank}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00095\ \ \ uint32\_t\ \mbox{\hyperlink{struct_a_d_c___injection_conf_type_def_a3d15c0590dbafc9e99e21ea4df5b0c6b}{InjectedSamplingTime}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00108\ \ \ uint32\_t\ \mbox{\hyperlink{struct_a_d_c___injection_conf_type_def_a327f85bebdb260f9fff0d28b69020df6}{InjectedSingleDiff}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00127\ \ \ uint32\_t\ \mbox{\hyperlink{struct_a_d_c___injection_conf_type_def_a24170a1b3dcf5798d3b9e76fc4f83789}{InjectedOffsetNumber}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00132\ \ \ uint32\_t\ \mbox{\hyperlink{struct_a_d_c___injection_conf_type_def_ac7d28d71ec3aec4d1587ee04fc585f09}{InjectedOffset}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00142\ \ \ uint32\_t\ \mbox{\hyperlink{struct_a_d_c___injection_conf_type_def_af8b03126861d4319c0496bd977178cd1}{InjectedOffsetSign}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00149\ \ \ FunctionalState\ \mbox{\hyperlink{struct_a_d_c___injection_conf_type_def_ac7311b9a52196ed00e503811a5ecaad0}{InjectedOffsetSaturation}};\ \ \ }
+\DoxyCodeLine{00156\ \ \ uint32\_t\ \mbox{\hyperlink{struct_a_d_c___injection_conf_type_def_ac59f9795b1b8c4ce6745d99f8231b768}{InjectedNbrOfConversion}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00166\ \ \ FunctionalState\ \mbox{\hyperlink{struct_a_d_c___injection_conf_type_def_ab842abce605e1eaf11077fd3825379e0}{InjectedDiscontinuousConvMode}};\ }
+\DoxyCodeLine{00182\ \ \ FunctionalState\ \mbox{\hyperlink{struct_a_d_c___injection_conf_type_def_a39b2ddf75be46eb2d474e261e7b1c875}{AutoInjectedConv}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00201\ \ \ FunctionalState\ \mbox{\hyperlink{struct_a_d_c___injection_conf_type_def_a58d9e1955c804425c2889e08999da5e2}{QueueInjectedContext}};\ \ \ }
+\DoxyCodeLine{00220\ \ \ uint32\_t\ \mbox{\hyperlink{struct_a_d_c___injection_conf_type_def_ac3431d4d3e3089f0db271bfb06dbffc0}{ExternalTrigInjecConv}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00231\ \ \ uint32\_t\ \mbox{\hyperlink{struct_a_d_c___injection_conf_type_def_a4f2cfa808b5ace1e47fc3f94da7b850f}{ExternalTrigInjecConvEdge}};\ \ \ \ \ }
+\DoxyCodeLine{00240\ \ \ FunctionalState\ \mbox{\hyperlink{struct_a_d_c___injection_conf_type_def_aea0ef83c31a7b6883b4ddda2b8968af3}{InjecOversamplingMode}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00245\ \ \ \mbox{\hyperlink{struct_a_d_c___inj_oversampling_type_def}{ADC\_InjOversamplingTypeDef}}\ \ \mbox{\hyperlink{struct_a_d_c___injection_conf_type_def_a59799df22a6e54106242263e694b9670}{InjecOversampling}};\ }
+\DoxyCodeLine{00250\ \}\ \mbox{\hyperlink{struct_a_d_c___injection_conf_type_def}{ADC\_InjectionConfTypeDef}};}
+\DoxyCodeLine{00251\ }
+\DoxyCodeLine{00252\ \textcolor{preprocessor}{\#if\ defined(ADC\_MULTIMODE\_SUPPORT)}}
+\DoxyCodeLine{00259\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00260\ \{}
+\DoxyCodeLine{00261\ \ \ uint32\_t\ Mode;\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00264\ \ \ uint32\_t\ DMAAccessMode;\ \ \ \ \ }
+\DoxyCodeLine{00269\ \ \ uint32\_t\ TwoSamplingDelay;\ \ }
+\DoxyCodeLine{00274\ \}\ ADC\_MultiModeTypeDef;}
+\DoxyCodeLine{00275\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ ADC\_MULTIMODE\_SUPPORT\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00276\ }
+\DoxyCodeLine{00281\ \textcolor{comment}{/*\ Exported\ constants\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00282\ }
+\DoxyCodeLine{00290\ \textcolor{comment}{/*\ ADC\ group\ regular\ trigger\ sources\ for\ all\ ADC\ instances\ */}}
+\DoxyCodeLine{00291\ \textcolor{preprocessor}{\#define\ ADC\_INJECTED\_SOFTWARE\_START\ \ \ \ \ \ \ \ (LL\_ADC\_INJ\_TRIG\_SOFTWARE)\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00293\ \textcolor{preprocessor}{\#define\ ADC\_EXTERNALTRIGINJEC\_T1\_TRGO\ \ \ \ \ \ (LL\_ADC\_INJ\_TRIG\_EXT\_TIM1\_TRGO)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00295\ \textcolor{preprocessor}{\#define\ ADC\_EXTERNALTRIGINJEC\_T1\_TRGO2\ \ \ \ \ (LL\_ADC\_INJ\_TRIG\_EXT\_TIM1\_TRGO2)\ \ \ \ \ \ }}
+\DoxyCodeLine{00297\ \textcolor{preprocessor}{\#define\ ADC\_EXTERNALTRIGINJEC\_T1\_CC3\ \ \ \ \ \ \ (LL\_ADC\_INJ\_TRIG\_EXT\_TIM1\_CH3)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00299\ \textcolor{preprocessor}{\#define\ ADC\_EXTERNALTRIGINJEC\_T1\_CC4\ \ \ \ \ \ \ (LL\_ADC\_INJ\_TRIG\_EXT\_TIM1\_CH4)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00301\ \textcolor{preprocessor}{\#define\ ADC\_EXTERNALTRIGINJEC\_T2\_TRGO\ \ \ \ \ \ (LL\_ADC\_INJ\_TRIG\_EXT\_TIM2\_TRGO)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00303\ \textcolor{preprocessor}{\#define\ ADC\_EXTERNALTRIGINJEC\_T2\_CC1\ \ \ \ \ \ \ (LL\_ADC\_INJ\_TRIG\_EXT\_TIM2\_CH1)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00305\ \textcolor{preprocessor}{\#define\ ADC\_EXTERNALTRIGINJEC\_T3\_TRGO\ \ \ \ \ \ (LL\_ADC\_INJ\_TRIG\_EXT\_TIM3\_TRGO)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00307\ \textcolor{preprocessor}{\#define\ ADC\_EXTERNALTRIGINJEC\_T3\_CC1\ \ \ \ \ \ \ (LL\_ADC\_INJ\_TRIG\_EXT\_TIM3\_CH1)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00309\ \textcolor{preprocessor}{\#define\ ADC\_EXTERNALTRIGINJEC\_T3\_CC3\ \ \ \ \ \ \ (LL\_ADC\_INJ\_TRIG\_EXT\_TIM3\_CH3)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00311\ \textcolor{preprocessor}{\#define\ ADC\_EXTERNALTRIGINJEC\_T3\_CC4\ \ \ \ \ \ \ (LL\_ADC\_INJ\_TRIG\_EXT\_TIM3\_CH4)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00313\ \textcolor{preprocessor}{\#define\ ADC\_EXTERNALTRIGINJEC\_T4\_TRGO\ \ \ \ \ \ (LL\_ADC\_INJ\_TRIG\_EXT\_TIM4\_TRGO)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00315\ \textcolor{preprocessor}{\#define\ ADC\_EXTERNALTRIGINJEC\_T4\_CC3\ \ \ \ \ \ \ (LL\_ADC\_INJ\_TRIG\_EXT\_TIM4\_CH3)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00317\ \textcolor{preprocessor}{\#define\ ADC\_EXTERNALTRIGINJEC\_T4\_CC4\ \ \ \ \ \ \ (LL\_ADC\_INJ\_TRIG\_EXT\_TIM4\_CH4)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00319\ \textcolor{preprocessor}{\#define\ ADC\_EXTERNALTRIGINJEC\_T6\_TRGO\ \ \ \ \ \ (LL\_ADC\_INJ\_TRIG\_EXT\_TIM6\_TRGO)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00321\ \textcolor{preprocessor}{\#define\ ADC\_EXTERNALTRIGINJEC\_T7\_TRGO\ \ \ \ \ \ (LL\_ADC\_INJ\_TRIG\_EXT\_TIM7\_TRGO)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00323\ \textcolor{preprocessor}{\#define\ ADC\_EXTERNALTRIGINJEC\_T8\_TRGO\ \ \ \ \ \ (LL\_ADC\_INJ\_TRIG\_EXT\_TIM8\_TRGO)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00325\ \textcolor{preprocessor}{\#define\ ADC\_EXTERNALTRIGINJEC\_T8\_TRGO2\ \ \ \ \ (LL\_ADC\_INJ\_TRIG\_EXT\_TIM8\_TRGO2)\ \ \ \ \ \ }}
+\DoxyCodeLine{00327\ \textcolor{preprocessor}{\#define\ ADC\_EXTERNALTRIGINJEC\_T8\_CC2\ \ \ \ \ \ \ (LL\_ADC\_INJ\_TRIG\_EXT\_TIM8\_CH2)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00329\ \textcolor{preprocessor}{\#define\ ADC\_EXTERNALTRIGINJEC\_T8\_CC4\ \ \ \ \ \ \ (LL\_ADC\_INJ\_TRIG\_EXT\_TIM8\_CH4)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00331\ \textcolor{preprocessor}{\#define\ ADC\_EXTERNALTRIGINJEC\_T15\_TRGO\ \ \ \ \ (LL\_ADC\_INJ\_TRIG\_EXT\_TIM15\_TRGO)\ \ \ \ \ \ }}
+\DoxyCodeLine{00333\ \textcolor{preprocessor}{\#define\ ADC\_EXTERNALTRIGINJEC\_T16\_CC1\ \ \ \ \ \ (LL\_ADC\_INJ\_TRIG\_EXT\_TIM16\_CH1)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00335\ \textcolor{preprocessor}{\#define\ ADC\_EXTERNALTRIGINJEC\_T20\_TRGO\ \ \ \ \ (LL\_ADC\_INJ\_TRIG\_EXT\_TIM20\_TRGO)\ \ \ \ \ \ }}
+\DoxyCodeLine{00337\ \textcolor{preprocessor}{\#define\ ADC\_EXTERNALTRIGINJEC\_T20\_TRGO2\ \ \ \ (LL\_ADC\_INJ\_TRIG\_EXT\_TIM20\_TRGO2)\ \ \ \ \ }}
+\DoxyCodeLine{00339\ \textcolor{preprocessor}{\#define\ ADC\_EXTERNALTRIGINJEC\_T20\_CC2\ \ \ \ \ \ (LL\_ADC\_INJ\_TRIG\_EXT\_TIM20\_CH2)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00341\ \textcolor{preprocessor}{\#define\ ADC\_EXTERNALTRIGINJEC\_T20\_CC4\ \ \ \ \ \ (LL\_ADC\_INJ\_TRIG\_EXT\_TIM20\_CH4)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00343\ \textcolor{preprocessor}{\#define\ ADC\_EXTERNALTRIGINJEC\_HRTIM\_TRG1\ \ \ (LL\_ADC\_INJ\_TRIG\_EXT\_HRTIM\_TRG1)\ \ \ \ \ \ }}
+\DoxyCodeLine{00345\ \textcolor{preprocessor}{\#define\ ADC\_EXTERNALTRIGINJEC\_HRTIM\_TRG2\ \ \ (LL\_ADC\_INJ\_TRIG\_EXT\_HRTIM\_TRG2)\ \ \ \ \ \ }}
+\DoxyCodeLine{00347\ \textcolor{preprocessor}{\#define\ ADC\_EXTERNALTRIGINJEC\_HRTIM\_TRG3\ \ \ (LL\_ADC\_INJ\_TRIG\_EXT\_HRTIM\_TRG3)\ \ \ \ \ \ }}
+\DoxyCodeLine{00349\ \textcolor{preprocessor}{\#define\ ADC\_EXTERNALTRIGINJEC\_HRTIM\_TRG4\ \ \ (LL\_ADC\_INJ\_TRIG\_EXT\_HRTIM\_TRG4)\ \ \ \ \ \ }}
+\DoxyCodeLine{00351\ \textcolor{preprocessor}{\#define\ ADC\_EXTERNALTRIGINJEC\_HRTIM\_TRG5\ \ \ (LL\_ADC\_INJ\_TRIG\_EXT\_HRTIM\_TRG5)\ \ \ \ \ \ }}
+\DoxyCodeLine{00353\ \textcolor{preprocessor}{\#define\ ADC\_EXTERNALTRIGINJEC\_HRTIM\_TRG6\ \ \ (LL\_ADC\_INJ\_TRIG\_EXT\_HRTIM\_TRG6)\ \ \ \ \ \ }}
+\DoxyCodeLine{00355\ \textcolor{preprocessor}{\#define\ ADC\_EXTERNALTRIGINJEC\_HRTIM\_TRG7\ \ \ (LL\_ADC\_INJ\_TRIG\_EXT\_HRTIM\_TRG7)\ \ \ \ \ \ }}
+\DoxyCodeLine{00357\ \textcolor{preprocessor}{\#define\ ADC\_EXTERNALTRIGINJEC\_HRTIM\_TRG8\ \ \ (LL\_ADC\_INJ\_TRIG\_EXT\_HRTIM\_TRG8)\ \ \ \ \ \ }}
+\DoxyCodeLine{00359\ \textcolor{preprocessor}{\#define\ ADC\_EXTERNALTRIGINJEC\_HRTIM\_TRG9\ \ \ (LL\_ADC\_INJ\_TRIG\_EXT\_HRTIM\_TRG9)\ \ \ \ \ \ }}
+\DoxyCodeLine{00361\ \textcolor{preprocessor}{\#define\ ADC\_EXTERNALTRIGINJEC\_HRTIM\_TRG10\ \ (LL\_ADC\_INJ\_TRIG\_EXT\_HRTIM\_TRG10)\ \ \ \ \ }}
+\DoxyCodeLine{00363\ \textcolor{preprocessor}{\#define\ ADC\_EXTERNALTRIGINJEC\_EXT\_IT3\ \ \ \ \ \ (LL\_ADC\_INJ\_TRIG\_EXT\_EXTI\_LINE3)\ \ \ \ \ \ }}
+\DoxyCodeLine{00365\ \textcolor{preprocessor}{\#define\ ADC\_EXTERNALTRIGINJEC\_EXT\_IT15\ \ \ \ \ (LL\_ADC\_INJ\_TRIG\_EXT\_EXTI\_LINE15)\ \ \ \ \ }}
+\DoxyCodeLine{00367\ \textcolor{preprocessor}{\#define\ ADC\_EXTERNALTRIGINJEC\_LPTIM\_OUT\ \ \ \ (LL\_ADC\_INJ\_TRIG\_EXT\_LPTIM\_OUT)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00376\ \textcolor{preprocessor}{\#define\ ADC\_EXTERNALTRIGINJECCONV\_EDGE\_NONE\ \ \ \ \ \ \ \ \ \ \ (0x00000000UL)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00378\ \textcolor{preprocessor}{\#define\ ADC\_EXTERNALTRIGINJECCONV\_EDGE\_RISING\ \ \ \ \ \ \ \ \ (ADC\_JSQR\_JEXTEN\_0)\ \ \ }}
+\DoxyCodeLine{00380\ \textcolor{preprocessor}{\#define\ ADC\_EXTERNALTRIGINJECCONV\_EDGE\_FALLING\ \ \ \ \ \ \ \ (ADC\_JSQR\_JEXTEN\_1)\ \ \ }}
+\DoxyCodeLine{00382\ \textcolor{preprocessor}{\#define\ ADC\_EXTERNALTRIGINJECCONV\_EDGE\_RISINGFALLING\ \ (ADC\_JSQR\_JEXTEN)\ \ \ \ \ }}
+\DoxyCodeLine{00391\ \textcolor{preprocessor}{\#define\ ADC\_SINGLE\_ENDED\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LL\_ADC\_SINGLE\_ENDED)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00392\ \textcolor{preprocessor}{\#define\ ADC\_DIFFERENTIAL\_ENDED\ \ \ \ \ \ \ \ \ \ (LL\_ADC\_DIFFERENTIAL\_ENDED)\ \ \ }}
+\DoxyCodeLine{00400\ \textcolor{preprocessor}{\#define\ ADC\_OFFSET\_NONE\ \ \ \ \ \ \ \ \ \ \ \ \ \ (ADC\_OFFSET\_4\ +\ 1U)\ }}
+\DoxyCodeLine{00402\ \textcolor{preprocessor}{\#define\ ADC\_OFFSET\_1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LL\_ADC\_OFFSET\_1)\ }}
+\DoxyCodeLine{00405\ \textcolor{preprocessor}{\#define\ ADC\_OFFSET\_2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LL\_ADC\_OFFSET\_2)\ }}
+\DoxyCodeLine{00408\ \textcolor{preprocessor}{\#define\ ADC\_OFFSET\_3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LL\_ADC\_OFFSET\_3)\ }}
+\DoxyCodeLine{00411\ \textcolor{preprocessor}{\#define\ ADC\_OFFSET\_4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LL\_ADC\_OFFSET\_4)\ }}
+\DoxyCodeLine{00421\ \textcolor{preprocessor}{\#define\ ADC\_OFFSET\_SIGN\_NEGATIVE\ \ \ \ \ \ (0x00000000UL)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00422\ \textcolor{preprocessor}{\#define\ ADC\_OFFSET\_SIGN\_POSITIVE\ \ \ \ \ \ (ADC\_OFR1\_OFFSETPOS)\ \ \ }}
+\DoxyCodeLine{00430\ \textcolor{preprocessor}{\#define\ ADC\_INJECTED\_RANK\_1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LL\_ADC\_INJ\_RANK\_1)\ }}
+\DoxyCodeLine{00431\ \textcolor{preprocessor}{\#define\ ADC\_INJECTED\_RANK\_2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LL\_ADC\_INJ\_RANK\_2)\ }}
+\DoxyCodeLine{00432\ \textcolor{preprocessor}{\#define\ ADC\_INJECTED\_RANK\_3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LL\_ADC\_INJ\_RANK\_3)\ }}
+\DoxyCodeLine{00433\ \textcolor{preprocessor}{\#define\ ADC\_INJECTED\_RANK\_4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LL\_ADC\_INJ\_RANK\_4)\ }}
+\DoxyCodeLine{00438\ \textcolor{preprocessor}{\#if\ defined(ADC\_MULTIMODE\_SUPPORT)}}
+\DoxyCodeLine{00442\ \textcolor{preprocessor}{\#define\ ADC\_MODE\_INDEPENDENT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LL\_ADC\_MULTI\_INDEPENDENT)\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00444\ \textcolor{preprocessor}{\#define\ ADC\_DUALMODE\_REGSIMULT\ \ \ \ \ \ \ \ \ \ \ \ \ (LL\_ADC\_MULTI\_DUAL\_REG\_SIMULT)\ \ \ \ \ \ }}
+\DoxyCodeLine{00446\ \textcolor{preprocessor}{\#define\ ADC\_DUALMODE\_INTERL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LL\_ADC\_MULTI\_DUAL\_REG\_INTERL)\ \ \ \ \ \ }}
+\DoxyCodeLine{00448\ \textcolor{preprocessor}{\#define\ ADC\_DUALMODE\_INJECSIMULT\ \ \ \ \ \ \ \ \ \ \ (LL\_ADC\_MULTI\_DUAL\_INJ\_SIMULT)\ \ \ \ \ \ }}
+\DoxyCodeLine{00450\ \textcolor{preprocessor}{\#define\ ADC\_DUALMODE\_ALTERTRIG\ \ \ \ \ \ \ \ \ \ \ \ \ (LL\_ADC\_MULTI\_DUAL\_INJ\_ALTERN)\ \ \ \ \ \ }}
+\DoxyCodeLine{00453\ \textcolor{preprocessor}{\#define\ ADC\_DUALMODE\_REGSIMULT\_INJECSIMULT\ (LL\_ADC\_MULTI\_DUAL\_REG\_SIM\_INJ\_SIM)\ }}
+\DoxyCodeLine{00455\ \textcolor{preprocessor}{\#define\ ADC\_DUALMODE\_REGSIMULT\_ALTERTRIG\ \ \ (LL\_ADC\_MULTI\_DUAL\_REG\_SIM\_INJ\_ALT)\ }}
+\DoxyCodeLine{00457\ \textcolor{preprocessor}{\#define\ ADC\_DUALMODE\_REGINTERL\_INJECSIMULT\ (LL\_ADC\_MULTI\_DUAL\_REG\_INT\_INJ\_SIM)\ }}
+\DoxyCodeLine{00463\ \textcolor{preprocessor}{\#define\ ADC\_DMAACCESSMODE\_DISABLED\ \ \ \ \ \ \ \ \ (0x00000000UL)\ \ \ \ \ }}
+\DoxyCodeLine{00465\ \textcolor{preprocessor}{\#define\ ADC\_DMAACCESSMODE\_12\_10\_BITS\ \ \ \ \ \ \ (ADC\_CCR\_MDMA\_1)\ \ \ }}
+\DoxyCodeLine{00467\ \textcolor{preprocessor}{\#define\ ADC\_DMAACCESSMODE\_8\_6\_BITS\ \ \ \ \ \ \ \ \ (ADC\_CCR\_MDMA)\ \ \ \ \ }}
+\DoxyCodeLine{00476\ \textcolor{preprocessor}{\#define\ ADC\_TWOSAMPLINGDELAY\_1CYCLE\ \ \ \ \ \ \ \ (LL\_ADC\_MULTI\_TWOSMP\_DELAY\_1CYCLE)\ \ \ \ }}
+\DoxyCodeLine{00478\ \textcolor{preprocessor}{\#define\ ADC\_TWOSAMPLINGDELAY\_2CYCLES\ \ \ \ \ \ \ (LL\_ADC\_MULTI\_TWOSMP\_DELAY\_2CYCLES)\ \ \ }}
+\DoxyCodeLine{00480\ \textcolor{preprocessor}{\#define\ ADC\_TWOSAMPLINGDELAY\_3CYCLES\ \ \ \ \ \ \ (LL\_ADC\_MULTI\_TWOSMP\_DELAY\_3CYCLES)\ \ \ }}
+\DoxyCodeLine{00482\ \textcolor{preprocessor}{\#define\ ADC\_TWOSAMPLINGDELAY\_4CYCLES\ \ \ \ \ \ \ (LL\_ADC\_MULTI\_TWOSMP\_DELAY\_4CYCLES)\ \ \ }}
+\DoxyCodeLine{00484\ \textcolor{preprocessor}{\#define\ ADC\_TWOSAMPLINGDELAY\_5CYCLES\ \ \ \ \ \ \ (LL\_ADC\_MULTI\_TWOSMP\_DELAY\_5CYCLES)\ \ \ }}
+\DoxyCodeLine{00486\ \textcolor{preprocessor}{\#define\ ADC\_TWOSAMPLINGDELAY\_6CYCLES\ \ \ \ \ \ \ (LL\_ADC\_MULTI\_TWOSMP\_DELAY\_6CYCLES)\ \ \ }}
+\DoxyCodeLine{00488\ \textcolor{preprocessor}{\#define\ ADC\_TWOSAMPLINGDELAY\_7CYCLES\ \ \ \ \ \ \ (LL\_ADC\_MULTI\_TWOSMP\_DELAY\_7CYCLES)\ \ \ }}
+\DoxyCodeLine{00490\ \textcolor{preprocessor}{\#define\ ADC\_TWOSAMPLINGDELAY\_8CYCLES\ \ \ \ \ \ \ (LL\_ADC\_MULTI\_TWOSMP\_DELAY\_8CYCLES)\ \ \ }}
+\DoxyCodeLine{00492\ \textcolor{preprocessor}{\#define\ ADC\_TWOSAMPLINGDELAY\_9CYCLES\ \ \ \ \ \ \ (LL\_ADC\_MULTI\_TWOSMP\_DELAY\_9CYCLES)\ \ \ }}
+\DoxyCodeLine{00494\ \textcolor{preprocessor}{\#define\ ADC\_TWOSAMPLINGDELAY\_10CYCLES\ \ \ \ \ \ (LL\_ADC\_MULTI\_TWOSMP\_DELAY\_10CYCLES)\ \ }}
+\DoxyCodeLine{00496\ \textcolor{preprocessor}{\#define\ ADC\_TWOSAMPLINGDELAY\_11CYCLES\ \ \ \ \ \ (LL\_ADC\_MULTI\_TWOSMP\_DELAY\_11CYCLES)\ \ }}
+\DoxyCodeLine{00498\ \textcolor{preprocessor}{\#define\ ADC\_TWOSAMPLINGDELAY\_12CYCLES\ \ \ \ \ \ (LL\_ADC\_MULTI\_TWOSMP\_DELAY\_12CYCLES)\ \ }}
+\DoxyCodeLine{00507\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ ADC\_MULTIMODE\_SUPPORT\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00508\ }
+\DoxyCodeLine{00512\ \textcolor{preprocessor}{\#define\ ADC\_REGULAR\_GROUP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LL\_ADC\_GROUP\_REGULAR)\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00514\ \textcolor{preprocessor}{\#define\ ADC\_INJECTED\_GROUP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (LL\_ADC\_GROUP\_INJECTED)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00516\ \textcolor{preprocessor}{\#define\ ADC\_REGULAR\_INJECTED\_GROUP\ \ \ \ \ \ \ \ \ (LL\_ADC\_GROUP\_REGULAR\_INJECTED)\ }}
+\DoxyCodeLine{00524\ \textcolor{preprocessor}{\#define\ ADC\_CFGR\_FIELDS\ \ \ \ (ADC\_CFGR\_AWD1CH\ \ |\ ADC\_CFGR\_JAUTO\ \ \ |\ ADC\_CFGR\_JAWD1EN\ |\(\backslash\)}}
+\DoxyCodeLine{00525\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ADC\_CFGR\_AWD1EN\ \ |\ ADC\_CFGR\_AWD1SGL\ |\ ADC\_CFGR\_JQM\ \ \ \ \ |\(\backslash\)}}
+\DoxyCodeLine{00526\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ADC\_CFGR\_JDISCEN\ |\ ADC\_CFGR\_DISCNUM\ |\ ADC\_CFGR\_DISCEN\ \ |\(\backslash\)}}
+\DoxyCodeLine{00527\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ADC\_CFGR\_AUTDLY\ \ |\ ADC\_CFGR\_CONT\ \ \ \ |\ ADC\_CFGR\_OVRMOD\ \ |\(\backslash\)}}
+\DoxyCodeLine{00528\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ADC\_CFGR\_EXTEN\ \ \ |\ ADC\_CFGR\_EXTSEL\ \ |\ ADC\_CFGR\_ALIGN\ \ \ |\(\backslash\)}}
+\DoxyCodeLine{00529\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ADC\_CFGR\_RES\ \ \ \ \ |\ ADC\_CFGR\_DMACFG\ \ |\ ADC\_CFGR\_DMAEN\ \ \ )}}
+\DoxyCodeLine{00537\ \textcolor{preprocessor}{\#if\ defined(ADC\_SMPR1\_SMPPLUS)}}
+\DoxyCodeLine{00538\ \textcolor{preprocessor}{\#define\ ADC\_SMPR1\_FIELDS\ \ \ \ (ADC\_SMPR1\_SMP9\ |\ ADC\_SMPR1\_SMP8\ |\ ADC\_SMPR1\_SMP7\ |\(\backslash\)}}
+\DoxyCodeLine{00539\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ADC\_SMPR1\_SMP6\ |\ ADC\_SMPR1\_SMP5\ |\ ADC\_SMPR1\_SMP4\ |\(\backslash\)}}
+\DoxyCodeLine{00540\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ADC\_SMPR1\_SMP3\ |\ ADC\_SMPR1\_SMP2\ |\ ADC\_SMPR1\_SMP1\ |\(\backslash\)}}
+\DoxyCodeLine{00541\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ADC\_SMPR1\_SMP0\ |\ ADC\_SMPR1\_SMPPLUS)}}
+\DoxyCodeLine{00542\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00543\ \textcolor{preprocessor}{\#define\ ADC\_SMPR1\_FIELDS\ \ \ \ (ADC\_SMPR1\_SMP9\ |\ ADC\_SMPR1\_SMP8\ |\ ADC\_SMPR1\_SMP7\ |\(\backslash\)}}
+\DoxyCodeLine{00544\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ADC\_SMPR1\_SMP6\ |\ ADC\_SMPR1\_SMP5\ |\ ADC\_SMPR1\_SMP4\ |\(\backslash\)}}
+\DoxyCodeLine{00545\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ADC\_SMPR1\_SMP3\ |\ ADC\_SMPR1\_SMP2\ |\ ADC\_SMPR1\_SMP1\ |\(\backslash\)}}
+\DoxyCodeLine{00546\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ADC\_SMPR1\_SMP0)}}
+\DoxyCodeLine{00547\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ ADC\_SMPR1\_SMPPLUS\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00555\ \textcolor{comment}{/*\ ADC\_CFGR\ fields\ of\ parameters\ that\ can\ be\ updated\ when\ no\ conversion}}
+\DoxyCodeLine{00556\ \textcolor{comment}{\ \ \ (neither\ regular\ nor\ injected)\ is\ on-\/going\ \ */}}
+\DoxyCodeLine{00557\ \textcolor{preprocessor}{\#define\ ADC\_CFGR\_FIELDS\_2\ \ ((ADC\_CFGR\_DMACFG\ |\ ADC\_CFGR\_AUTDLY))}}
+\DoxyCodeLine{00566\ \textcolor{comment}{/*\ Exported\ macros\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00567\ }
+\DoxyCodeLine{00568\ \textcolor{preprocessor}{\#if\ defined(ADC\_MULTIMODE\_SUPPORT)}}
+\DoxyCodeLine{00587\ \textcolor{preprocessor}{\#define\ ADC\_FORCE\_MODE\_INDEPENDENT(\_\_HANDLE\_\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00588\ \textcolor{preprocessor}{\ \ LL\_ADC\_SetMultimode(\_\_LL\_ADC\_COMMON\_INSTANCE((\_\_HANDLE\_\_)-\/>Instance),\ LL\_ADC\_MULTI\_INDEPENDENT)}}
+\DoxyCodeLine{00589\ }
+\DoxyCodeLine{00593\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ ADC\_MULTIMODE\_SUPPORT\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00594\ }
+\DoxyCodeLine{00595\ \textcolor{comment}{/*\ Private\ macros\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00596\ }
+\DoxyCodeLine{00600\ \textcolor{comment}{/*\ Macro\ reserved\ for\ internal\ HAL\ driver\ usage,\ not\ intended\ to\ be\ used\ in\ \ \ */}}
+\DoxyCodeLine{00601\ \textcolor{comment}{/*\ code\ of\ final\ user.\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00602\ }
+\DoxyCodeLine{00609\ \textcolor{preprocessor}{\#define\ ADC\_IS\_SOFTWARE\_START\_INJECTED(\_\_HANDLE\_\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00610\ \textcolor{preprocessor}{\ \ (((\_\_HANDLE\_\_)-\/>Instance-\/>JSQR\ \&\ ADC\_JSQR\_JEXTEN)\ ==\ 0UL)}}
+\DoxyCodeLine{00611\ }
+\DoxyCodeLine{00618\ \textcolor{preprocessor}{\#if\ defined(STM32G474xx)\ ||\ defined(STM32G484xx)\ ||\ defined(STM32G473xx)\ ||\ defined(STM32G483xx)}}
+\DoxyCodeLine{00619\ \textcolor{preprocessor}{\#define\ ADC\_IS\_INDEPENDENT(\_\_HANDLE\_\_)\ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00620\ \textcolor{preprocessor}{\ \ (\ (\ (\ ((\_\_HANDLE\_\_)-\/>Instance)\ ==\ ADC5)\ \(\backslash\)}}
+\DoxyCodeLine{00621\ \textcolor{preprocessor}{\ \ \ \ )?\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00622\ \textcolor{preprocessor}{\ \ \ \ SET\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00623\ \textcolor{preprocessor}{\ \ \ \ :\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00624\ \textcolor{preprocessor}{\ \ \ \ RESET\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00625\ \textcolor{preprocessor}{\ \ )}}
+\DoxyCodeLine{00626\ \textcolor{preprocessor}{\#elif\ defined(STM32G491xx)\ ||\ defined(STM32G4A1xx)}}
+\DoxyCodeLine{00627\ \textcolor{preprocessor}{\#define\ ADC\_IS\_INDEPENDENT(\_\_HANDLE\_\_)\ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00628\ \textcolor{preprocessor}{\ \ (\ (\ (\ ((\_\_HANDLE\_\_)-\/>Instance)\ ==\ ADC3)\ \(\backslash\)}}
+\DoxyCodeLine{00629\ \textcolor{preprocessor}{\ \ \ \ )?\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00630\ \textcolor{preprocessor}{\ \ \ \ SET\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00631\ \textcolor{preprocessor}{\ \ \ \ :\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00632\ \textcolor{preprocessor}{\ \ \ \ RESET\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00633\ \textcolor{preprocessor}{\ \ )}}
+\DoxyCodeLine{00634\ \textcolor{preprocessor}{\#elif\ defined(STM32G414xx)\ ||\ defined(STM32GBK1CB)\ ||\ defined(STM32G431xx)\ ||\ defined(STM32G441xx)\ ||\ defined(STM32G471xx)}}
+\DoxyCodeLine{00635\ \textcolor{preprocessor}{\#define\ ADC\_IS\_INDEPENDENT(\_\_HANDLE\_\_)\ (RESET)}}
+\DoxyCodeLine{00636\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ defined(STM32G474xx)\ ||\ defined(STM32G484xx)\ ||\ defined(STM32G473xx)\ ||\ defined(STM32G483xx)\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00637\ }
+\DoxyCodeLine{00644\ \textcolor{preprocessor}{\#define\ ADC\_JSQR\_RK(\_\_CHANNELNB\_\_,\ \_\_RANKNB\_\_)\ \(\backslash\)}}
+\DoxyCodeLine{00645\ \textcolor{preprocessor}{\ \ ((((\_\_CHANNELNB\_\_)\ \&\ ADC\_CHANNEL\_ID\_NUMBER\_MASK)\ >>\ ADC\_CHANNEL\_ID\_NUMBER\_BITOFFSET\_POS)\ \(\backslash\)}}
+\DoxyCodeLine{00646\ \textcolor{preprocessor}{\ \ \ <<\ ((\_\_RANKNB\_\_)\ \&\ ADC\_INJ\_RANK\_ID\_JSQR\_MASK))}}
+\DoxyCodeLine{00647\ }
+\DoxyCodeLine{00653\ \textcolor{preprocessor}{\#define\ ADC\_CFGR\_INJECT\_CONTEXT\_QUEUE(\_\_INJECT\_CONTEXT\_QUEUE\_MODE\_\_)\ \(\backslash\)}}
+\DoxyCodeLine{00654\ \textcolor{preprocessor}{\ \ ((\_\_INJECT\_CONTEXT\_QUEUE\_MODE\_\_)\ <<\ ADC\_CFGR\_JQM\_Pos)}}
+\DoxyCodeLine{00655\ }
+\DoxyCodeLine{00661\ \textcolor{preprocessor}{\#define\ ADC\_CFGR\_INJECT\_DISCCONTINUOUS(\_\_INJECT\_DISCONTINUOUS\_MODE\_\_)\ \(\backslash\)}}
+\DoxyCodeLine{00662\ \textcolor{preprocessor}{\ \ ((\_\_INJECT\_DISCONTINUOUS\_MODE\_\_)\ <<\ \ ADC\_CFGR\_JDISCEN\_Pos)}}
+\DoxyCodeLine{00663\ }
+\DoxyCodeLine{00669\ \textcolor{preprocessor}{\#define\ ADC\_CFGR\_REG\_DISCONTINUOUS(\_\_REG\_DISCONTINUOUS\_MODE\_\_)\ \(\backslash\)}}
+\DoxyCodeLine{00670\ \textcolor{preprocessor}{\ \ ((\_\_REG\_DISCONTINUOUS\_MODE\_\_)\ <<\ ADC\_CFGR\_DISCEN\_Pos)}}
+\DoxyCodeLine{00671\ }
+\DoxyCodeLine{00677\ \textcolor{preprocessor}{\#define\ ADC\_CFGR\_DISCONTINUOUS\_NUM(\_\_NBR\_DISCONTINUOUS\_CONV\_\_)\ \(\backslash\)}}
+\DoxyCodeLine{00678\ \textcolor{preprocessor}{\ \ (((\_\_NBR\_DISCONTINUOUS\_CONV\_\_)\ -\/\ 1UL)\ <<\ ADC\_CFGR\_DISCNUM\_Pos)}}
+\DoxyCodeLine{00679\ }
+\DoxyCodeLine{00685\ \textcolor{preprocessor}{\#define\ ADC\_CFGR\_AUTOWAIT(\_\_AUTOWAIT\_\_)\ ((\_\_AUTOWAIT\_\_)\ <<\ ADC\_CFGR\_AUTDLY\_Pos)}}
+\DoxyCodeLine{00686\ }
+\DoxyCodeLine{00692\ \textcolor{preprocessor}{\#define\ ADC\_CFGR\_CONTINUOUS(\_\_CONTINUOUS\_MODE\_\_)\ ((\_\_CONTINUOUS\_MODE\_\_)\ <<\ ADC\_CFGR\_CONT\_Pos)}}
+\DoxyCodeLine{00693\ }
+\DoxyCodeLine{00699\ \textcolor{preprocessor}{\#define\ ADC\_CFGR\_DMACONTREQ(\_\_DMACONTREQ\_MODE\_\_)\ ((\_\_DMACONTREQ\_MODE\_\_)\ <<\ \ ADC\_CFGR\_DMACFG\_Pos)}}
+\DoxyCodeLine{00700\ }
+\DoxyCodeLine{00701\ \textcolor{preprocessor}{\#if\ defined(ADC\_MULTIMODE\_SUPPORT)}}
+\DoxyCodeLine{00707\ \textcolor{preprocessor}{\#define\ ADC\_CCR\_MULTI\_DMACONTREQ(\_\_DMACONTREQ\_MODE\_\_)\ ((\_\_DMACONTREQ\_MODE\_\_)\ <<\ ADC\_CCR\_DMACFG\_Pos)}}
+\DoxyCodeLine{00708\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ ADC\_MULTIMODE\_SUPPORT\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00709\ }
+\DoxyCodeLine{00722\ \textcolor{preprocessor}{\#define\ ADC\_OFFSET\_SHIFT\_RESOLUTION(\_\_HANDLE\_\_,\ \_\_OFFSET\_\_)\ \(\backslash\)}}
+\DoxyCodeLine{00723\ \textcolor{preprocessor}{\ \ ((\_\_OFFSET\_\_)\ <<\ ((((\_\_HANDLE\_\_)-\/>Instance-\/>CFGR\ \&\ ADC\_CFGR\_RES)\ >>\ 3UL)\ *\ 2UL))}}
+\DoxyCodeLine{00724\ }
+\DoxyCodeLine{00737\ \textcolor{preprocessor}{\#define\ ADC\_AWD1THRESHOLD\_SHIFT\_RESOLUTION(\_\_HANDLE\_\_,\ \_\_THRESHOLD\_\_)\ \(\backslash\)}}
+\DoxyCodeLine{00738\ \textcolor{preprocessor}{\ \ ((\_\_THRESHOLD\_\_)\ <<\ ((((\_\_HANDLE\_\_)-\/>Instance-\/>CFGR\ \&\ ADC\_CFGR\_RES)\ >>\ 3UL)\ *\ 2UL))}}
+\DoxyCodeLine{00739\ }
+\DoxyCodeLine{00751\ \textcolor{preprocessor}{\#define\ ADC\_AWD23THRESHOLD\_SHIFT\_RESOLUTION(\_\_HANDLE\_\_,\ \_\_THRESHOLD\_\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00752\ \textcolor{preprocessor}{\ \ ((((\_\_HANDLE\_\_)-\/>Instance-\/>CFGR\ \&\ ADC\_CFGR\_RES)\ !=\ (ADC\_CFGR\_RES\_1\ |\ ADC\_CFGR\_RES\_0))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ \(\backslash\)}}
+\DoxyCodeLine{00753\ \textcolor{preprocessor}{\ \ \ ((\_\_THRESHOLD\_\_)\ >>\ ((4UL\ -\/\ ((((\_\_HANDLE\_\_)-\/>Instance-\/>CFGR\ \&\ ADC\_CFGR\_RES)\ >>\ 3UL)\ *\ 2UL))\ \&\ 0x1FUL))\ :\ \(\backslash\)}}
+\DoxyCodeLine{00754\ \textcolor{preprocessor}{\ \ \ ((\_\_THRESHOLD\_\_)\ <<\ 2UL)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00755\ \textcolor{preprocessor}{\ \ )}}
+\DoxyCodeLine{00756\ }
+\DoxyCodeLine{00762\ \textcolor{preprocessor}{\#if\ defined(ADC\_MULTIMODE\_SUPPORT)}}
+\DoxyCodeLine{00763\ \textcolor{preprocessor}{\#define\ ADC\_CLEAR\_COMMON\_CONTROL\_REGISTER(\_\_HANDLE\_\_)\ CLEAR\_BIT(\_\_LL\_ADC\_COMMON\_INSTANCE((\_\_HANDLE\_\_)-\/>Instance)-\/>CCR,\ \(\backslash\)}}
+\DoxyCodeLine{00764\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ADC\_CCR\_CKMODE\ \ \ \ |\ \(\backslash\)}}
+\DoxyCodeLine{00765\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ADC\_CCR\_PRESC\ \ \ \ \ |\ \(\backslash\)}}
+\DoxyCodeLine{00766\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ADC\_CCR\_VBATSEL\ \ \ |\ \(\backslash\)}}
+\DoxyCodeLine{00767\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ADC\_CCR\_VSENSESEL\ |\ \(\backslash\)}}
+\DoxyCodeLine{00768\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ADC\_CCR\_VREFEN\ \ \ \ |\ \(\backslash\)}}
+\DoxyCodeLine{00769\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ADC\_CCR\_MDMA\ \ \ \ \ \ |\ \(\backslash\)}}
+\DoxyCodeLine{00770\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ADC\_CCR\_DMACFG\ \ \ \ |\ \(\backslash\)}}
+\DoxyCodeLine{00771\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ADC\_CCR\_DELAY\ \ \ \ \ |\ \(\backslash\)}}
+\DoxyCodeLine{00772\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ADC\_CCR\_DUAL)}}
+\DoxyCodeLine{00773\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ ADC\_MULTIMODE\_SUPPORT\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00774\ }
+\DoxyCodeLine{00775\ \textcolor{preprocessor}{\#if\ defined(STM32G474xx)\ ||\ defined(STM32G484xx)\ ||\ defined(STM32G473xx)\ ||\ defined(STM32G483xx)}}
+\DoxyCodeLine{00784\ \textcolor{preprocessor}{\#define\ ADC\_MULTI\_SLAVE(\_\_HANDLE\_MASTER\_\_,\ \_\_HANDLE\_SLAVE\_\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00785\ \textcolor{preprocessor}{\ \ (\ ((\_\_HANDLE\_MASTER\_\_)-\/>Instance\ ==\ ADC1)\ ?\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00786\ \textcolor{preprocessor}{\ \ \ \ ((\_\_HANDLE\_SLAVE\_\_)-\/>Instance\ =\ ADC2)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00787\ \textcolor{preprocessor}{\ \ \ \ :\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00788\ \textcolor{preprocessor}{\ \ \ \ ((\_\_HANDLE\_MASTER\_\_)-\/>Instance\ ==\ ADC3)\ ?\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00789\ \textcolor{preprocessor}{\ \ \ \ ((\_\_HANDLE\_SLAVE\_\_)-\/>Instance\ =\ ADC4)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00790\ \textcolor{preprocessor}{\ \ \ \ :\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00791\ \textcolor{preprocessor}{\ \ \ \ ((\_\_HANDLE\_SLAVE\_\_)-\/>Instance\ =\ NULL)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00792\ \textcolor{preprocessor}{\ \ )}}
+\DoxyCodeLine{00793\ \textcolor{preprocessor}{\#elif\ defined(STM32G414xx)\ ||\ defined(STM32GBK1CB)\ ||\ defined(STM32G431xx)\ ||\ defined(STM32G441xx)\ ||\ defined(STM32G471xx)\ ||\ defined(STM32G491xx)\ ||\ defined(STM32G4A1xx)}}
+\DoxyCodeLine{00802\ \textcolor{preprocessor}{\#define\ ADC\_MULTI\_SLAVE(\_\_HANDLE\_MASTER\_\_,\ \_\_HANDLE\_SLAVE\_\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00803\ \textcolor{preprocessor}{\ \ (\ ((\_\_HANDLE\_MASTER\_\_)-\/>Instance\ ==\ ADC1)\ ?\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00804\ \textcolor{preprocessor}{\ \ \ \ ((\_\_HANDLE\_SLAVE\_\_)-\/>Instance\ =\ ADC2)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00805\ \textcolor{preprocessor}{\ \ \ \ :\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00806\ \textcolor{preprocessor}{\ \ \ \ ((\_\_HANDLE\_SLAVE\_\_)-\/>Instance\ =\ NULL)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00807\ \textcolor{preprocessor}{\ \ )}}
+\DoxyCodeLine{00808\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ STM32G4xx\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00809\ }
+\DoxyCodeLine{00810\ }
+\DoxyCodeLine{00816\ \textcolor{preprocessor}{\#if\ defined(STM32G474xx)\ ||\ defined(STM32G484xx)\ ||\ defined(STM32G473xx)\ ||\ defined(STM32G483xx)}}
+\DoxyCodeLine{00817\ \textcolor{preprocessor}{\#define\ ADC\_TEMPERATURE\_SENSOR\_INSTANCE(\_\_HANDLE\_\_)\ \(\backslash\)}}
+\DoxyCodeLine{00818\ \textcolor{preprocessor}{\ \ ((((\_\_HANDLE\_\_)-\/>Instance)\ ==\ ADC1)\ ||\ (((\_\_HANDLE\_\_)-\/>Instance)\ ==\ ADC5))}}
+\DoxyCodeLine{00819\ \textcolor{preprocessor}{\#elif\ defined(STM32G414xx)\ ||\ defined(STM32GBK1CB)\ ||\ defined(STM32G431xx)\ ||\ defined(STM32G441xx)\ ||\ defined(STM32G471xx)\ ||\ defined(STM32G491xx)\ ||\ defined(STM32G4A1xx)}}
+\DoxyCodeLine{00820\ \textcolor{preprocessor}{\#define\ ADC\_TEMPERATURE\_SENSOR\_INSTANCE(\_\_HANDLE\_\_)\ \ (((\_\_HANDLE\_\_)-\/>Instance)\ ==\ ADC1)}}
+\DoxyCodeLine{00821\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ defined(STM32G474xx)\ ||\ defined(STM32G484xx)\ ||\ defined(STM32G473xx)\ ||\ defined(STM32G483xx)\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00822\ }
+\DoxyCodeLine{00828\ \textcolor{preprocessor}{\#if\ defined(STM32G474xx)\ ||\ defined(STM32G484xx)\ ||\ defined(STM32G473xx)\ ||\ defined(STM32G483xx)}}
+\DoxyCodeLine{00829\ \textcolor{preprocessor}{\#define\ ADC\_BATTERY\_VOLTAGE\_INSTANCE(\_\_HANDLE\_\_)\ \(\backslash\)}}
+\DoxyCodeLine{00830\ \textcolor{preprocessor}{\ \ ((((\_\_HANDLE\_\_)-\/>Instance)\ !=\ ADC2)\ ||\ (((\_\_HANDLE\_\_)-\/>Instance)\ !=\ ADC4))}}
+\DoxyCodeLine{00831\ \textcolor{preprocessor}{\#elif\ defined(STM32G414xx)\ ||\ defined(STM32GBK1CB)\ ||\ defined(STM32G431xx)\ ||\ defined(STM32G441xx)\ ||\ defined(STM32G471xx)}}
+\DoxyCodeLine{00832\ \textcolor{preprocessor}{\#define\ ADC\_BATTERY\_VOLTAGE\_INSTANCE(\_\_HANDLE\_\_)\ \ (((\_\_HANDLE\_\_)-\/>Instance)\ !=\ ADC2)}}
+\DoxyCodeLine{00833\ \textcolor{preprocessor}{\#elif\ defined(STM32G491xx)\ ||\ defined(STM32G4A1xx)}}
+\DoxyCodeLine{00834\ \textcolor{preprocessor}{\#define\ ADC\_BATTERY\_VOLTAGE\_INSTANCE(\_\_HANDLE\_\_)\ \ (((\_\_HANDLE\_\_)-\/>Instance)\ ==\ ADC1)}}
+\DoxyCodeLine{00835\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ STM32G4xx\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00836\ }
+\DoxyCodeLine{00842\ \textcolor{preprocessor}{\#define\ ADC\_VREFINT\_INSTANCE(\_\_HANDLE\_\_)\ \ (((\_\_HANDLE\_\_)-\/>Instance)\ !=\ ADC2)}}
+\DoxyCodeLine{00843\ }
+\DoxyCodeLine{00850\ \textcolor{preprocessor}{\#define\ IS\_ADC\_INJECTED\_NB\_CONV(\_\_LENGTH\_\_)\ (((\_\_LENGTH\_\_)\ >=\ (1U))\ \&\&\ ((\_\_LENGTH\_\_)\ <=\ (4U)))}}
+\DoxyCodeLine{00851\ }
+\DoxyCodeLine{00857\ \textcolor{preprocessor}{\#define\ IS\_ADC\_CALFACT(\_\_CALIBRATION\_FACTOR\_\_)\ ((\_\_CALIBRATION\_FACTOR\_\_)\ <=\ (0x7FU))}}
+\DoxyCodeLine{00858\ }
+\DoxyCodeLine{00859\ }
+\DoxyCodeLine{00866\ \textcolor{preprocessor}{\#if\ defined(STM32G474xx)\ ||\ defined(STM32G484xx)\ ||\ defined(STM32G473xx)\ ||\ defined(STM32G483xx)}}
+\DoxyCodeLine{00867\ \textcolor{preprocessor}{\#define\ IS\_ADC\_CHANNEL(\_\_HANDLE\_\_,\ \_\_CHANNEL\_\_)\ \ (\ \ \ \ \ \ (\ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00868\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00869\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_2)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00870\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_6)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00871\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_7)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00872\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_8)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00873\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_9)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00874\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_10)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00875\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_11)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00876\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_12)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00877\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_14)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00878\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_15))\ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00879\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((((\_\_HANDLE\_\_)-\/>Instance)\ ==\ ADC1)\ \ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{00880\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_3)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00881\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_4)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00882\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_5)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00883\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_VOPAMP1)\ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00884\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_TEMPSENSOR\_ADC1)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00885\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_VBAT)\ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00886\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_VREFINT)))\ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00887\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((((\_\_HANDLE\_\_)-\/>Instance)\ ==\ ADC2)\ \ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{00888\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_3)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00889\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_4)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00890\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_5)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00891\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_13)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00892\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_VOPAMP2)\ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00893\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_17)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00894\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_VOPAMP3\_ADC2)))\ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00895\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((((\_\_HANDLE\_\_)-\/>Instance)\ ==\ ADC3)\ \ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{00896\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_3)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00897\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_4)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00898\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_5)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00899\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_VOPAMP3\_ADC3)\ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00900\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_16)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00901\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_VBAT)\ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00902\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_VREFINT)))\ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00903\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((((\_\_HANDLE\_\_)-\/>Instance)\ ==\ ADC4)\ \ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{00904\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_3)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00905\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_4)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00906\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_5)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00907\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_13)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00908\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_16)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00909\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_VOPAMP6)\ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00910\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_VREFINT)))\ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00911\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((((\_\_HANDLE\_\_)-\/>Instance)\ ==\ ADC5)\ \ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{00912\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_VOPAMP5)\ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00913\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_TEMPSENSOR\_ADC5)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00914\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_VOPAMP4)\ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00915\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_13)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00916\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_16)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00917\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_VBAT)\ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00918\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_VREFINT))))}}
+\DoxyCodeLine{00919\ \textcolor{preprocessor}{\#elif\ defined(STM32G471xx)}}
+\DoxyCodeLine{00920\ \textcolor{preprocessor}{\#define\ IS\_ADC\_CHANNEL(\_\_HANDLE\_\_,\ \_\_CHANNEL\_\_)\ \ (\ \ \ \ \ \ (\ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00921\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00922\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_2)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00923\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_3)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00924\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_4)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00925\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_5)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00926\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_6)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00927\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_7)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00928\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_8)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00929\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_9)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00930\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_10)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00931\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_11)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00932\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_12)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00933\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_14)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00934\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_15))\ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00935\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((((\_\_HANDLE\_\_)-\/>Instance)\ ==\ ADC1)\ \ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{00936\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_VOPAMP1)\ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00937\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_TEMPSENSOR\_ADC1)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00938\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_VBAT)\ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00939\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_VREFINT)))\ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00940\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((((\_\_HANDLE\_\_)-\/>Instance)\ ==\ ADC2)\ \ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{00941\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_13)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00942\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_VOPAMP2)\ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00943\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_17)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00944\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_VOPAMP3\_ADC2)))\ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00945\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((((\_\_HANDLE\_\_)-\/>Instance)\ ==\ ADC3)\ \ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{00946\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_VOPAMP3\_ADC3)\ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00947\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_16)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00948\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_VBAT)\ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00949\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_VREFINT))))}}
+\DoxyCodeLine{00950\ \textcolor{preprocessor}{\#elif\ defined(STM32G414xx)\ ||\ defined(STM32GBK1CB)\ ||\ defined(STM32G431xx)\ ||\ defined(STM32G441xx)}}
+\DoxyCodeLine{00951\ \textcolor{preprocessor}{\#define\ IS\_ADC\_CHANNEL(\_\_HANDLE\_\_,\ \_\_CHANNEL\_\_)\ \ (\ \ \ \ \ \ (\ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00952\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00953\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_2)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00954\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_3)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00955\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_4)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00956\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_5)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00957\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_6)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00958\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_7)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00959\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_8)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00960\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_9)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00961\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_10)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00962\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_11)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00963\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_12)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00964\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_14)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00965\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_15))\ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00966\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((((\_\_HANDLE\_\_)-\/>Instance)\ ==\ ADC1)\ \ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{00967\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_VOPAMP1)\ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00968\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_TEMPSENSOR\_ADC1)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00969\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_VBAT)\ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00970\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_VREFINT)))\ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00971\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((((\_\_HANDLE\_\_)-\/>Instance)\ ==\ ADC2)\ \ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{00972\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_13)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00973\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_VOPAMP2)\ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00974\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_17)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00975\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_VOPAMP3\_ADC2))))}}
+\DoxyCodeLine{00976\ \textcolor{preprocessor}{\#elif\ defined(STM32G491xx)\ ||\ defined(STM32G4A1xx)}}
+\DoxyCodeLine{00977\ \textcolor{preprocessor}{\#define\ IS\_ADC\_CHANNEL(\_\_HANDLE\_\_,\ \_\_CHANNEL\_\_)\ \ (\ \ \ \ \ \ (\ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00978\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00979\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_2)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00980\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_3)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00981\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_4)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00982\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_5)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00983\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_6)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00984\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_7)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00985\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_8)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00986\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_9)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00987\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_10)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00988\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_11)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00989\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_12)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00990\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_14)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00991\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_15))\ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00992\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((((\_\_HANDLE\_\_)-\/>Instance)\ ==\ ADC1)\ \ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{00993\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_VOPAMP1)\ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00994\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_TEMPSENSOR\_ADC1)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00995\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_VBAT)\ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00996\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_VREFINT)))\ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00997\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((((\_\_HANDLE\_\_)-\/>Instance)\ ==\ ADC2)\ \ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{00998\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_13)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00999\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_VOPAMP2)\ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01000\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_17)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01001\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_VOPAMP3\_ADC2)))\ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01002\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((((\_\_HANDLE\_\_)-\/>Instance)\ ==\ ADC3)\ \ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{01003\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_VOPAMP3\_ADC3)\ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01004\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_16)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01005\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_VOPAMP6)\ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01006\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_VREFINT))))}}
+\DoxyCodeLine{01007\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ defined(STM32G474xx)\ ||\ defined(STM32G484xx)\ ||\ defined(STM32G473xx)\ ||\ defined(STM32G483xx)\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{01008\ }
+\DoxyCodeLine{01015\ \textcolor{preprocessor}{\#if\ defined(STM32G474xx)\ ||\ defined(STM32G484xx)\ ||\ defined(STM32G473xx)\ ||\ defined(STM32G483xx)}}
+\DoxyCodeLine{01016\ \textcolor{preprocessor}{\#define\ IS\_ADC\_DIFF\_CHANNEL(\_\_HANDLE\_\_,\ \_\_CHANNEL\_\_)\ \ (\ (\ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_1)\ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01017\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_6)\ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01018\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_7)\ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01019\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_8)\ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01020\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_9)\ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01021\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_10)\ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01022\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_11)\ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01023\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_14))\ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01024\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((((\_\_HANDLE\_\_)-\/>Instance)\ ==\ ADC1)\ \ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{01025\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_2)\ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01026\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_3)\ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01027\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_4)\ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01028\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_5)))\ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01029\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((((\_\_HANDLE\_\_)-\/>Instance)\ ==\ ADC2)\ \ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{01030\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_2)\ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01031\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_3)\ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01032\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_4)\ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01033\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_5)\ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01034\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_12)\ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01035\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_13)))\ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01036\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((((\_\_HANDLE\_\_)-\/>Instance)\ ==\ ADC3)\ \ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{01037\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_2)\ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01038\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_3)\ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01039\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_4)\ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01040\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_5)\ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01041\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_15)))\ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01042\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((((\_\_HANDLE\_\_)-\/>Instance)\ ==\ ADC4)\ \ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{01043\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_2)\ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01044\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_3)\ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01045\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_4)\ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01046\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_5)\ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01047\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_12)\ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01048\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_13)\ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01049\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_15)))\ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01050\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((((\_\_HANDLE\_\_)-\/>Instance)\ ==\ ADC5)\ \ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{01051\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_12)\ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01052\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_13)\ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01053\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_15)))\ )}}
+\DoxyCodeLine{01054\ \textcolor{preprocessor}{\#elif\ defined(STM32G471xx)\ ||\ defined(STM32G491xx)\ ||\ defined(STM32G4A1xx)}}
+\DoxyCodeLine{01055\ \textcolor{preprocessor}{\#define\ IS\_ADC\_DIFF\_CHANNEL(\_\_HANDLE\_\_,\ \_\_CHANNEL\_\_)\ \ (\ (\ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_1)\ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01056\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_2)\ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01057\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_3)\ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01058\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_4)\ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01059\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_5)\ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01060\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_6)\ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01061\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_7)\ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01062\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_8)\ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01063\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_9)\ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01064\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_10)\ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01065\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_11)\ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01066\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_14))\ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01067\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((((\_\_HANDLE\_\_)-\/>Instance)\ ==\ ADC2)\ \ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{01068\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_12)\ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01069\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_13)))\ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01070\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((((\_\_HANDLE\_\_)-\/>Instance)\ ==\ ADC3)\ \ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{01071\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_15)))\ )}}
+\DoxyCodeLine{01072\ \textcolor{preprocessor}{\#elif\ defined(STM32G414xx)\ ||\ defined(STM32GBK1CB)\ ||\ defined(STM32G431xx)\ ||\ defined(STM32G441xx)}}
+\DoxyCodeLine{01073\ \textcolor{preprocessor}{\#define\ IS\_ADC\_DIFF\_CHANNEL(\_\_HANDLE\_\_,\ \_\_CHANNEL\_\_)\ \ (\ (\ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_1)\ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01074\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_2)\ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01075\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_3)\ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01076\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_4)\ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01077\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_5)\ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01078\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_6)\ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01079\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_7)\ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01080\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_8)\ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01081\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_9)\ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01082\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_10)\ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01083\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_11)\ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01084\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_14))\ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01085\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((((\_\_HANDLE\_\_)-\/>Instance)\ ==\ ADC2)\ \ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{01086\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_12)\ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01087\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_CHANNEL\_13)))\ )}}
+\DoxyCodeLine{01088\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ STM32G4xx\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{01089\ }
+\DoxyCodeLine{01095\ \textcolor{preprocessor}{\#define\ IS\_ADC\_SINGLE\_DIFFERENTIAL(\_\_SING\_DIFF\_\_)\ (((\_\_SING\_DIFF\_\_)\ ==\ ADC\_SINGLE\_ENDED)\ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01096\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_SING\_DIFF\_\_)\ ==\ ADC\_DIFFERENTIAL\_ENDED)\ \ )}}
+\DoxyCodeLine{01097\ }
+\DoxyCodeLine{01103\ \textcolor{preprocessor}{\#define\ IS\_ADC\_OFFSET\_NUMBER(\_\_OFFSET\_NUMBER\_\_)\ (((\_\_OFFSET\_NUMBER\_\_)\ ==\ ADC\_OFFSET\_NONE)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{01104\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_OFFSET\_NUMBER\_\_)\ ==\ ADC\_OFFSET\_1)\ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01105\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_OFFSET\_NUMBER\_\_)\ ==\ ADC\_OFFSET\_2)\ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01106\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_OFFSET\_NUMBER\_\_)\ ==\ ADC\_OFFSET\_3)\ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01107\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_OFFSET\_NUMBER\_\_)\ ==\ ADC\_OFFSET\_4)\ \ \ \ \ \ )}}
+\DoxyCodeLine{01108\ }
+\DoxyCodeLine{01114\ \textcolor{preprocessor}{\#define\ IS\_ADC\_OFFSET\_SIGN(\_\_OFFSET\_SIGN\_\_)\ \ \ \ \ (((\_\_OFFSET\_SIGN\_\_)\ ==\ ADC\_OFFSET\_SIGN\_NEGATIVE)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{01115\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_OFFSET\_SIGN\_\_)\ ==\ ADC\_OFFSET\_SIGN\_POSITIVE)\ \ \ \ )}}
+\DoxyCodeLine{01116\ }
+\DoxyCodeLine{01122\ \textcolor{preprocessor}{\#define\ IS\_ADC\_INJECTED\_RANK(\_\_CHANNEL\_\_)\ (((\_\_CHANNEL\_\_)\ ==\ ADC\_INJECTED\_RANK\_1)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{01123\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_INJECTED\_RANK\_2)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{01124\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_INJECTED\_RANK\_3)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{01125\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CHANNEL\_\_)\ ==\ ADC\_INJECTED\_RANK\_4)\ \ \ )}}
+\DoxyCodeLine{01126\ }
+\DoxyCodeLine{01133\ \textcolor{preprocessor}{\#if\ defined(STM32G474xx)\ ||\ defined(STM32G484xx)}}
+\DoxyCodeLine{01134\ \textcolor{preprocessor}{\#define\ IS\_ADC\_EXTTRIGINJEC(\_\_HANDLE\_\_,\ \_\_INJTRIG\_\_)\ \ (((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T1\_TRGO)\ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01135\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T1\_TRGO2)\ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01136\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T1\_CC4)\ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01137\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T2\_TRGO)\ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01138\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T3\_TRGO)\ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01139\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T4\_TRGO)\ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01140\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T6\_TRGO)\ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01141\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T7\_TRGO)\ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01142\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T8\_TRGO)\ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01143\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T8\_TRGO2)\ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01144\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T8\_CC4)\ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01145\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T15\_TRGO)\ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01146\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T20\_TRGO)\ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01147\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T20\_TRGO2)\ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01148\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_HRTIM\_TRG2)\ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01149\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_HRTIM\_TRG4)\ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01150\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_HRTIM\_TRG5)\ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01151\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_HRTIM\_TRG6)\ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01152\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_HRTIM\_TRG7)\ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01153\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_HRTIM\_TRG8)\ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01154\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_HRTIM\_TRG9)\ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01155\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_HRTIM\_TRG10)\ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01156\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_LPTIM\_OUT)\ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01157\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((((\_\_HANDLE\_\_)-\/>Instance\ ==\ ADC1)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{01158\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_HANDLE\_\_)-\/>Instance\ ==\ ADC2))\ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{01159\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T2\_CC1)\ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01160\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T3\_CC1)\ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01161\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T3\_CC3)\ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01162\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T3\_CC4)\ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01163\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T16\_CC1)\ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01164\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T20\_CC4)\ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01165\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_EXT\_IT15)))\ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01166\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((((\_\_HANDLE\_\_)-\/>Instance\ ==\ ADC3)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{01167\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_HANDLE\_\_)-\/>Instance\ ==\ ADC4)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{01168\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_HANDLE\_\_)-\/>Instance\ ==\ ADC5))\ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{01169\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T1\_CC3)\ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01170\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T4\_CC3)\ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01171\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T4\_CC4)\ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01172\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T8\_CC2)\ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01173\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T20\_CC2)\ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01174\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_HRTIM\_TRG1)\ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01175\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_HRTIM\_TRG3)\ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01176\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_EXT\_IT3)))\ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01177\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_INJECTED\_SOFTWARE\_START)\ \ \ \ \ \ \ \ \ \ )}}
+\DoxyCodeLine{01178\ \textcolor{preprocessor}{\#elif\ defined(STM32G473xx)\ ||\ defined(STM32G483xx)}}
+\DoxyCodeLine{01179\ \textcolor{preprocessor}{\#define\ IS\_ADC\_EXTTRIGINJEC(\_\_HANDLE\_\_,\ \_\_INJTRIG\_\_)\ \ (((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T1\_TRGO)\ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01180\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T1\_TRGO2)\ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01181\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T1\_CC4)\ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01182\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T2\_TRGO)\ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01183\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T3\_TRGO)\ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01184\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T4\_TRGO)\ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01185\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T6\_TRGO)\ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01186\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T7\_TRGO)\ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01187\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T8\_TRGO)\ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01188\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T8\_TRGO2)\ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01189\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T8\_CC4)\ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01190\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T15\_TRGO)\ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01191\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T20\_TRGO)\ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01192\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T20\_TRGO2)\ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01193\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_LPTIM\_OUT)\ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01194\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((((\_\_HANDLE\_\_)-\/>Instance\ ==\ ADC1)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{01195\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_HANDLE\_\_)-\/>Instance\ ==\ ADC2))\ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{01196\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T2\_CC1)\ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01197\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T3\_CC1)\ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01198\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T3\_CC3)\ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01199\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T3\_CC4)\ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01200\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T16\_CC1)\ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01201\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T20\_CC4)\ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01202\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_EXT\_IT15)))\ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01203\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((((\_\_HANDLE\_\_)-\/>Instance\ ==\ ADC3)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{01204\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_HANDLE\_\_)-\/>Instance\ ==\ ADC4)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{01205\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_HANDLE\_\_)-\/>Instance\ ==\ ADC5))\ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{01206\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T1\_CC3)\ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01207\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T4\_CC3)\ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01208\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T4\_CC4)\ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01209\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T8\_CC2)\ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01210\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T20\_CC2)\ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01211\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_EXT\_IT3)))\ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01212\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_INJECTED\_SOFTWARE\_START)\ \ \ \ \ \ \ \ \ \ )}}
+\DoxyCodeLine{01213\ \textcolor{preprocessor}{\#elif\ defined(STM32G471xx)}}
+\DoxyCodeLine{01214\ \textcolor{preprocessor}{\#define\ IS\_ADC\_EXTTRIGINJEC(\_\_HANDLE\_\_,\ \_\_INJTRIG\_\_)\ \ (((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T1\_TRGO)\ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01215\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T1\_TRGO2)\ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01216\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T1\_CC4)\ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01217\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T2\_TRGO)\ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01218\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T3\_TRGO)\ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01219\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T4\_TRGO)\ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01220\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T6\_TRGO)\ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01221\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T7\_TRGO)\ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01222\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T8\_TRGO)\ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01223\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T8\_TRGO2)\ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01224\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T8\_CC4)\ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01225\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T15\_TRGO)\ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01226\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_LPTIM\_OUT)\ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01227\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((((\_\_HANDLE\_\_)-\/>Instance\ ==\ ADC1)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{01228\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_HANDLE\_\_)-\/>Instance\ ==\ ADC2))\ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{01229\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T2\_CC1)\ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01230\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T3\_CC1)\ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01231\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T3\_CC3)\ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01232\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T3\_CC4)\ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01233\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T16\_CC1)\ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01234\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_EXT\_IT15)))\ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01235\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((((\_\_HANDLE\_\_)-\/>Instance\ ==\ ADC3))\ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{01236\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T1\_CC3)\ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01237\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T4\_CC3)\ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01238\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T4\_CC4)\ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01239\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T8\_CC2)\ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01240\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_EXT\_IT3)))\ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01241\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_INJECTED\_SOFTWARE\_START)\ \ \ \ \ \ \ \ \ \ )}}
+\DoxyCodeLine{01242\ \textcolor{preprocessor}{\#elif\ defined(STM32G414xx)\ ||\ defined(STM32GBK1CB)\ ||\ defined(STM32G431xx)\ ||\ defined(STM32G441xx)}}
+\DoxyCodeLine{01243\ \textcolor{preprocessor}{\#define\ IS\_ADC\_EXTTRIGINJEC(\_\_HANDLE\_\_,\ \_\_INJTRIG\_\_)\ \ (((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T1\_TRGO)\ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01244\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T1\_TRGO2)\ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01245\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T1\_CC4)\ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01246\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T2\_TRGO)\ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01247\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T2\_CC1)\ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01248\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T3\_TRGO)\ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01249\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T3\_CC1)\ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01250\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T3\_CC3)\ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01251\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T3\_CC4)\ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01252\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T4\_TRGO)\ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01253\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T6\_TRGO)\ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01254\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T7\_TRGO)\ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01255\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T8\_TRGO)\ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01256\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T8\_TRGO2)\ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01257\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T8\_CC4)\ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01258\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T15\_TRGO)\ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01259\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T16\_CC1)\ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01260\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_EXT\_IT15)\ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01261\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_LPTIM\_OUT)\ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01262\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_INJECTED\_SOFTWARE\_START)\ \ \ \ \ \ \ \ \ \ )}}
+\DoxyCodeLine{01263\ \textcolor{preprocessor}{\#elif\ defined(STM32G491xx)\ ||\ defined(STM32G4A1xx)}}
+\DoxyCodeLine{01264\ \textcolor{preprocessor}{\#define\ IS\_ADC\_EXTTRIGINJEC(\_\_HANDLE\_\_,\ \_\_INJTRIG\_\_)\ \ (((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T1\_TRGO)\ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01265\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T1\_TRGO2)\ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01266\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T1\_CC4)\ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01267\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T2\_TRGO)\ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01268\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T3\_TRGO)\ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01269\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T4\_TRGO)\ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01270\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T6\_TRGO)\ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01271\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T7\_TRGO)\ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01272\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T8\_TRGO)\ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01273\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T8\_TRGO2)\ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01274\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T8\_CC4)\ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01275\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T15\_TRGO)\ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01276\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T20\_TRGO)\ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01277\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T20\_TRGO2)\ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01278\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_LPTIM\_OUT)\ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01279\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((((\_\_HANDLE\_\_)-\/>Instance\ ==\ ADC1)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{01280\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_HANDLE\_\_)-\/>Instance\ ==\ ADC2))\ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{01281\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T2\_CC1)\ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01282\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T3\_CC1)\ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01283\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T3\_CC3)\ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01284\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T3\_CC4)\ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01285\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T16\_CC1)\ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01286\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T20\_CC4)\ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01287\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_EXT\_IT15)))\ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01288\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((\_\_HANDLE\_\_)-\/>Instance\ ==\ ADC3)\ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{01289\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T1\_CC3)\ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01290\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T4\_CC3)\ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01291\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T4\_CC4)\ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01292\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T8\_CC2)\ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01293\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_T20\_CC2)\ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01294\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_EXTERNALTRIGINJEC\_EXT\_IT3)))\ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01295\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INJTRIG\_\_)\ ==\ ADC\_INJECTED\_SOFTWARE\_START)\ \ \ \ \ \ \ \ \ \ )}}
+\DoxyCodeLine{01296\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ STM32G4xx\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{01297\ }
+\DoxyCodeLine{01303\ \textcolor{preprocessor}{\#define\ IS\_ADC\_EXTTRIGINJEC\_EDGE(\_\_EDGE\_\_)\ (((\_\_EDGE\_\_)\ ==\ ADC\_EXTERNALTRIGINJECCONV\_EDGE\_NONE)\ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01304\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_EDGE\_\_)\ ==\ ADC\_EXTERNALTRIGINJECCONV\_EDGE\_RISING)\ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01305\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_EDGE\_\_)\ ==\ ADC\_EXTERNALTRIGINJECCONV\_EDGE\_FALLING)\ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01306\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_EDGE\_\_)\ ==\ ADC\_EXTERNALTRIGINJECCONV\_EDGE\_RISINGFALLING)\ )}}
+\DoxyCodeLine{01307\ }
+\DoxyCodeLine{01308\ \textcolor{preprocessor}{\#if\ defined(ADC\_MULTIMODE\_SUPPORT)}}
+\DoxyCodeLine{01314\ \textcolor{preprocessor}{\#define\ IS\_ADC\_MULTIMODE(\_\_MODE\_\_)\ (((\_\_MODE\_\_)\ ==\ ADC\_MODE\_INDEPENDENT)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01315\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_MODE\_\_)\ ==\ ADC\_DUALMODE\_REGSIMULT\_INJECSIMULT)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{01316\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_MODE\_\_)\ ==\ ADC\_DUALMODE\_REGSIMULT\_ALTERTRIG)\ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01317\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_MODE\_\_)\ ==\ ADC\_DUALMODE\_REGINTERL\_INJECSIMULT)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{01318\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_MODE\_\_)\ ==\ ADC\_DUALMODE\_INJECSIMULT)\ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01319\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_MODE\_\_)\ ==\ ADC\_DUALMODE\_REGSIMULT)\ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01320\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_MODE\_\_)\ ==\ ADC\_DUALMODE\_INTERL)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01321\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_MODE\_\_)\ ==\ ADC\_DUALMODE\_ALTERTRIG)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}}
+\DoxyCodeLine{01322\ }
+\DoxyCodeLine{01328\ \textcolor{preprocessor}{\#define\ IS\_ADC\_DMA\_ACCESS\_MULTIMODE(\_\_MODE\_\_)\ (((\_\_MODE\_\_)\ ==\ ADC\_DMAACCESSMODE\_DISABLED)\ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01329\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_MODE\_\_)\ ==\ ADC\_DMAACCESSMODE\_12\_10\_BITS)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{01330\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_MODE\_\_)\ ==\ ADC\_DMAACCESSMODE\_8\_6\_BITS)\ \ \ \ \ )}}
+\DoxyCodeLine{01331\ }
+\DoxyCodeLine{01337\ \textcolor{preprocessor}{\#define\ IS\_ADC\_SAMPLING\_DELAY(\_\_DELAY\_\_)\ (((\_\_DELAY\_\_)\ ==\ ADC\_TWOSAMPLINGDELAY\_1CYCLE)\ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01338\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_DELAY\_\_)\ ==\ ADC\_TWOSAMPLINGDELAY\_2CYCLES)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01339\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_DELAY\_\_)\ ==\ ADC\_TWOSAMPLINGDELAY\_3CYCLES)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01340\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_DELAY\_\_)\ ==\ ADC\_TWOSAMPLINGDELAY\_4CYCLES)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01341\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_DELAY\_\_)\ ==\ ADC\_TWOSAMPLINGDELAY\_5CYCLES)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01342\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_DELAY\_\_)\ ==\ ADC\_TWOSAMPLINGDELAY\_6CYCLES)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01343\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_DELAY\_\_)\ ==\ ADC\_TWOSAMPLINGDELAY\_7CYCLES)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01344\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_DELAY\_\_)\ ==\ ADC\_TWOSAMPLINGDELAY\_8CYCLES)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01345\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_DELAY\_\_)\ ==\ ADC\_TWOSAMPLINGDELAY\_9CYCLES)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01346\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_DELAY\_\_)\ ==\ ADC\_TWOSAMPLINGDELAY\_10CYCLES)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{01347\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_DELAY\_\_)\ ==\ ADC\_TWOSAMPLINGDELAY\_11CYCLES)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{01348\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_DELAY\_\_)\ ==\ ADC\_TWOSAMPLINGDELAY\_12CYCLES)\ \ \ )}}
+\DoxyCodeLine{01349\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ ADC\_MULTIMODE\_SUPPORT\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{01350\ }
+\DoxyCodeLine{01356\ \textcolor{preprocessor}{\#define\ IS\_ADC\_ANALOG\_WATCHDOG\_NUMBER(\_\_WATCHDOG\_\_)\ (((\_\_WATCHDOG\_\_)\ ==\ ADC\_ANALOGWATCHDOG\_1)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{01357\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_WATCHDOG\_\_)\ ==\ ADC\_ANALOGWATCHDOG\_2)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{01358\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_WATCHDOG\_\_)\ ==\ ADC\_ANALOGWATCHDOG\_3)\ \ \ )}}
+\DoxyCodeLine{01359\ }
+\DoxyCodeLine{01365\ \textcolor{preprocessor}{\#define\ IS\_ADC\_ANALOG\_WATCHDOG\_MODE(\_\_WATCHDOG\_MODE\_\_)\ (((\_\_WATCHDOG\_MODE\_\_)\ ==\ ADC\_ANALOGWATCHDOG\_NONE)\ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01366\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_WATCHDOG\_MODE\_\_)\ ==\ ADC\_ANALOGWATCHDOG\_SINGLE\_REG)\ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01367\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_WATCHDOG\_MODE\_\_)\ ==\ ADC\_ANALOGWATCHDOG\_SINGLE\_INJEC)\ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01368\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_WATCHDOG\_MODE\_\_)\ ==\ ADC\_ANALOGWATCHDOG\_SINGLE\_REGINJEC)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{01369\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_WATCHDOG\_MODE\_\_)\ ==\ ADC\_ANALOGWATCHDOG\_ALL\_REG)\ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01370\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_WATCHDOG\_MODE\_\_)\ ==\ ADC\_ANALOGWATCHDOG\_ALL\_INJEC)\ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01371\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_WATCHDOG\_MODE\_\_)\ ==\ ADC\_ANALOGWATCHDOG\_ALL\_REGINJEC)\ \ \ \ \ \ )}}
+\DoxyCodeLine{01372\ }
+\DoxyCodeLine{01378\ \textcolor{preprocessor}{\#define\ IS\_ADC\_ANALOG\_WATCHDOG\_FILTERING\_MODE(\_\_FILTERING\_MODE\_\_)\ \(\backslash\)}}
+\DoxyCodeLine{01379\ \textcolor{preprocessor}{\ \ (((\_\_FILTERING\_MODE\_\_)\ ==\ ADC\_AWD\_FILTERING\_NONE)\ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01380\ \textcolor{preprocessor}{\ \ \ ((\_\_FILTERING\_MODE\_\_)\ ==\ ADC\_AWD\_FILTERING\_2SAMPLES)\ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01381\ \textcolor{preprocessor}{\ \ \ ((\_\_FILTERING\_MODE\_\_)\ ==\ ADC\_AWD\_FILTERING\_3SAMPLES)\ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01382\ \textcolor{preprocessor}{\ \ \ ((\_\_FILTERING\_MODE\_\_)\ ==\ ADC\_AWD\_FILTERING\_4SAMPLES)\ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01383\ \textcolor{preprocessor}{\ \ \ ((\_\_FILTERING\_MODE\_\_)\ ==\ ADC\_AWD\_FILTERING\_5SAMPLES)\ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01384\ \textcolor{preprocessor}{\ \ \ ((\_\_FILTERING\_MODE\_\_)\ ==\ ADC\_AWD\_FILTERING\_6SAMPLES)\ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01385\ \textcolor{preprocessor}{\ \ \ ((\_\_FILTERING\_MODE\_\_)\ ==\ ADC\_AWD\_FILTERING\_7SAMPLES)\ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01386\ \textcolor{preprocessor}{\ \ \ ((\_\_FILTERING\_MODE\_\_)\ ==\ ADC\_AWD\_FILTERING\_8SAMPLES)\ \ \ \ \ \ \ \ \ \ \ )}}
+\DoxyCodeLine{01387\ }
+\DoxyCodeLine{01388\ }
+\DoxyCodeLine{01394\ \textcolor{preprocessor}{\#define\ IS\_ADC\_CONVERSION\_GROUP(\_\_CONVERSION\_\_)\ (((\_\_CONVERSION\_\_)\ ==\ ADC\_REGULAR\_GROUP)\ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01395\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CONVERSION\_\_)\ ==\ ADC\_INJECTED\_GROUP)\ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01396\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CONVERSION\_\_)\ ==\ ADC\_REGULAR\_INJECTED\_GROUP)\ \ )}}
+\DoxyCodeLine{01397\ }
+\DoxyCodeLine{01403\ \textcolor{preprocessor}{\#define\ IS\_ADC\_EVENT\_TYPE(\_\_EVENT\_\_)\ (((\_\_EVENT\_\_)\ ==\ ADC\_EOSMP\_EVENT)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01404\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_EVENT\_\_)\ ==\ ADC\_AWD\_EVENT)\ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01405\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_EVENT\_\_)\ ==\ ADC\_AWD2\_EVENT)\ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01406\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_EVENT\_\_)\ ==\ ADC\_AWD3\_EVENT)\ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01407\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_EVENT\_\_)\ ==\ ADC\_OVR\_EVENT)\ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{01408\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_EVENT\_\_)\ ==\ ADC\_JQOVF\_EVENT)\ \ )}}
+\DoxyCodeLine{01409\ }
+\DoxyCodeLine{01415\ \textcolor{preprocessor}{\#define\ IS\_ADC\_OVERSAMPLING\_RATIO(\_\_RATIO\_\_)\ \ \ \ \ \ (((\_\_RATIO\_\_)\ ==\ ADC\_OVERSAMPLING\_RATIO\_2\ \ \ )\ ||\ \(\backslash\)}}
+\DoxyCodeLine{01416\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_RATIO\_\_)\ ==\ ADC\_OVERSAMPLING\_RATIO\_4\ \ \ )\ ||\ \(\backslash\)}}
+\DoxyCodeLine{01417\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_RATIO\_\_)\ ==\ ADC\_OVERSAMPLING\_RATIO\_8\ \ \ )\ ||\ \(\backslash\)}}
+\DoxyCodeLine{01418\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_RATIO\_\_)\ ==\ ADC\_OVERSAMPLING\_RATIO\_16\ \ )\ ||\ \(\backslash\)}}
+\DoxyCodeLine{01419\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_RATIO\_\_)\ ==\ ADC\_OVERSAMPLING\_RATIO\_32\ \ )\ ||\ \(\backslash\)}}
+\DoxyCodeLine{01420\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_RATIO\_\_)\ ==\ ADC\_OVERSAMPLING\_RATIO\_64\ \ )\ ||\ \(\backslash\)}}
+\DoxyCodeLine{01421\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_RATIO\_\_)\ ==\ ADC\_OVERSAMPLING\_RATIO\_128\ )\ ||\ \(\backslash\)}}
+\DoxyCodeLine{01422\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_RATIO\_\_)\ ==\ ADC\_OVERSAMPLING\_RATIO\_256\ ))}}
+\DoxyCodeLine{01423\ }
+\DoxyCodeLine{01429\ \textcolor{preprocessor}{\#define\ IS\_ADC\_RIGHT\_BIT\_SHIFT(\_\_SHIFT\_\_)\ \ \ \ \ \ \ \ (((\_\_SHIFT\_\_)\ ==\ ADC\_RIGHTBITSHIFT\_NONE)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{01430\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_SHIFT\_\_)\ ==\ ADC\_RIGHTBITSHIFT\_1\ \ \ )\ ||\ \(\backslash\)}}
+\DoxyCodeLine{01431\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_SHIFT\_\_)\ ==\ ADC\_RIGHTBITSHIFT\_2\ \ \ )\ ||\ \(\backslash\)}}
+\DoxyCodeLine{01432\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_SHIFT\_\_)\ ==\ ADC\_RIGHTBITSHIFT\_3\ \ \ )\ ||\ \(\backslash\)}}
+\DoxyCodeLine{01433\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_SHIFT\_\_)\ ==\ ADC\_RIGHTBITSHIFT\_4\ \ \ )\ ||\ \(\backslash\)}}
+\DoxyCodeLine{01434\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_SHIFT\_\_)\ ==\ ADC\_RIGHTBITSHIFT\_5\ \ \ )\ ||\ \(\backslash\)}}
+\DoxyCodeLine{01435\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_SHIFT\_\_)\ ==\ ADC\_RIGHTBITSHIFT\_6\ \ \ )\ ||\ \(\backslash\)}}
+\DoxyCodeLine{01436\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_SHIFT\_\_)\ ==\ ADC\_RIGHTBITSHIFT\_7\ \ \ )\ ||\ \(\backslash\)}}
+\DoxyCodeLine{01437\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_SHIFT\_\_)\ ==\ ADC\_RIGHTBITSHIFT\_8\ \ \ ))}}
+\DoxyCodeLine{01438\ }
+\DoxyCodeLine{01444\ \textcolor{preprocessor}{\#define\ IS\_ADC\_TRIGGERED\_OVERSAMPLING\_MODE(\_\_MODE\_\_)\ (((\_\_MODE\_\_)\ ==\ ADC\_TRIGGEREDMODE\_SINGLE\_TRIGGER)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{01445\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_MODE\_\_)\ ==\ ADC\_TRIGGEREDMODE\_MULTI\_TRIGGER)\ )}}
+\DoxyCodeLine{01446\ }
+\DoxyCodeLine{01452\ \textcolor{preprocessor}{\#define\ IS\_ADC\_REGOVERSAMPLING\_MODE(\_\_MODE\_\_)\ (((\_\_MODE\_\_)\ ==\ ADC\_REGOVERSAMPLING\_CONTINUED\_MODE)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{01453\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_MODE\_\_)\ ==\ ADC\_REGOVERSAMPLING\_RESUMED\_MODE)\ )}}
+\DoxyCodeLine{01454\ }
+\DoxyCodeLine{01463\ \textcolor{preprocessor}{\#define\ IS\_ADC\_DFSDMCFG\_MODE(\_\_HANDLE\_\_)\ (SET)}}
+\DoxyCodeLine{01464\ }
+\DoxyCodeLine{01473\ \textcolor{preprocessor}{\#define\ ADC\_CFGR\_DFSDM(\_\_HANDLE\_\_)\ (0x0UL)}}
+\DoxyCodeLine{01474\ }
+\DoxyCodeLine{01480\ \textcolor{comment}{/*\ Exported\ functions\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{01488\ \textcolor{comment}{/*\ IO\ operation\ functions\ *****************************************************/}}
+\DoxyCodeLine{01489\ }
+\DoxyCodeLine{01490\ \textcolor{comment}{/*\ ADC\ calibration\ */}}
+\DoxyCodeLine{01491\ HAL\_StatusTypeDef\ \ \ \ \ \ \ HAL\_ADCEx\_Calibration\_Start(\mbox{\hyperlink{struct_a_d_c___handle_type_def}{ADC\_HandleTypeDef}}\ *hadc,\ uint32\_t\ SingleDiff);}
+\DoxyCodeLine{01492\ uint32\_t\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ HAL\_ADCEx\_Calibration\_GetValue(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_a_d_c___handle_type_def}{ADC\_HandleTypeDef}}\ *hadc,\ uint32\_t\ SingleDiff);}
+\DoxyCodeLine{01493\ HAL\_StatusTypeDef\ \ \ \ \ \ \ HAL\_ADCEx\_Calibration\_SetValue(\mbox{\hyperlink{struct_a_d_c___handle_type_def}{ADC\_HandleTypeDef}}\ *hadc,\ uint32\_t\ SingleDiff,}
+\DoxyCodeLine{01494\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ CalibrationFactor);}
+\DoxyCodeLine{01495\ }
+\DoxyCodeLine{01496\ \textcolor{comment}{/*\ Blocking\ mode:\ Polling\ */}}
+\DoxyCodeLine{01497\ HAL\_StatusTypeDef\ \ \ \ \ \ \ HAL\_ADCEx\_InjectedStart(\mbox{\hyperlink{struct_a_d_c___handle_type_def}{ADC\_HandleTypeDef}}\ *hadc);}
+\DoxyCodeLine{01498\ HAL\_StatusTypeDef\ \ \ \ \ \ \ HAL\_ADCEx\_InjectedStop(\mbox{\hyperlink{struct_a_d_c___handle_type_def}{ADC\_HandleTypeDef}}\ *hadc);}
+\DoxyCodeLine{01499\ HAL\_StatusTypeDef\ \ \ \ \ \ \ HAL\_ADCEx\_InjectedPollForConversion(\mbox{\hyperlink{struct_a_d_c___handle_type_def}{ADC\_HandleTypeDef}}\ *hadc,\ uint32\_t\ Timeout);}
+\DoxyCodeLine{01500\ }
+\DoxyCodeLine{01501\ \textcolor{comment}{/*\ Non-\/blocking\ mode:\ Interruption\ */}}
+\DoxyCodeLine{01502\ HAL\_StatusTypeDef\ \ \ \ \ \ \ HAL\_ADCEx\_InjectedStart\_IT(\mbox{\hyperlink{struct_a_d_c___handle_type_def}{ADC\_HandleTypeDef}}\ *hadc);}
+\DoxyCodeLine{01503\ HAL\_StatusTypeDef\ \ \ \ \ \ \ HAL\_ADCEx\_InjectedStop\_IT(\mbox{\hyperlink{struct_a_d_c___handle_type_def}{ADC\_HandleTypeDef}}\ *hadc);}
+\DoxyCodeLine{01504\ }
+\DoxyCodeLine{01505\ \textcolor{preprocessor}{\#if\ defined(ADC\_MULTIMODE\_SUPPORT)}}
+\DoxyCodeLine{01506\ \textcolor{comment}{/*\ ADC\ multimode\ */}}
+\DoxyCodeLine{01507\ HAL\_StatusTypeDef\ \ \ \ \ \ \ HAL\_ADCEx\_MultiModeStart\_DMA(\mbox{\hyperlink{struct_a_d_c___handle_type_def}{ADC\_HandleTypeDef}}\ *hadc,\ uint32\_t\ *pData,\ uint32\_t\ Length);}
+\DoxyCodeLine{01508\ HAL\_StatusTypeDef\ \ \ \ \ \ \ HAL\_ADCEx\_MultiModeStop\_DMA(\mbox{\hyperlink{struct_a_d_c___handle_type_def}{ADC\_HandleTypeDef}}\ *hadc);}
+\DoxyCodeLine{01509\ uint32\_t\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ HAL\_ADCEx\_MultiModeGetValue(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_a_d_c___handle_type_def}{ADC\_HandleTypeDef}}\ *hadc);}
+\DoxyCodeLine{01510\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ ADC\_MULTIMODE\_SUPPORT\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{01511\ }
+\DoxyCodeLine{01512\ \textcolor{comment}{/*\ ADC\ retrieve\ conversion\ value\ intended\ to\ be\ used\ with\ polling\ or\ interruption\ */}}
+\DoxyCodeLine{01513\ uint32\_t\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ HAL\_ADCEx\_InjectedGetValue(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_a_d_c___handle_type_def}{ADC\_HandleTypeDef}}\ *hadc,\ uint32\_t\ InjectedRank);}
+\DoxyCodeLine{01514\ }
+\DoxyCodeLine{01515\ \textcolor{comment}{/*\ ADC\ IRQHandler\ and\ Callbacks\ used\ in\ non-\/blocking\ modes\ (Interruption)\ */}}
+\DoxyCodeLine{01516\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ HAL\_ADCEx\_InjectedConvCpltCallback(\mbox{\hyperlink{struct_a_d_c___handle_type_def}{ADC\_HandleTypeDef}}\ *hadc);}
+\DoxyCodeLine{01517\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ HAL\_ADCEx\_InjectedQueueOverflowCallback(\mbox{\hyperlink{struct_a_d_c___handle_type_def}{ADC\_HandleTypeDef}}\ *hadc);}
+\DoxyCodeLine{01518\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ HAL\_ADCEx\_LevelOutOfWindow2Callback(\mbox{\hyperlink{struct_a_d_c___handle_type_def}{ADC\_HandleTypeDef}}\ *hadc);}
+\DoxyCodeLine{01519\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ HAL\_ADCEx\_LevelOutOfWindow3Callback(\mbox{\hyperlink{struct_a_d_c___handle_type_def}{ADC\_HandleTypeDef}}\ *hadc);}
+\DoxyCodeLine{01520\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ HAL\_ADCEx\_EndOfSamplingCallback(\mbox{\hyperlink{struct_a_d_c___handle_type_def}{ADC\_HandleTypeDef}}\ *hadc);}
+\DoxyCodeLine{01521\ }
+\DoxyCodeLine{01522\ \textcolor{comment}{/*\ ADC\ group\ regular\ conversions\ stop\ */}}
+\DoxyCodeLine{01523\ HAL\_StatusTypeDef\ \ \ \ \ \ \ HAL\_ADCEx\_RegularStop(\mbox{\hyperlink{struct_a_d_c___handle_type_def}{ADC\_HandleTypeDef}}\ *hadc);}
+\DoxyCodeLine{01524\ HAL\_StatusTypeDef\ \ \ \ \ \ \ HAL\_ADCEx\_RegularStop\_IT(\mbox{\hyperlink{struct_a_d_c___handle_type_def}{ADC\_HandleTypeDef}}\ *hadc);}
+\DoxyCodeLine{01525\ HAL\_StatusTypeDef\ \ \ \ \ \ \ HAL\_ADCEx\_RegularStop\_DMA(\mbox{\hyperlink{struct_a_d_c___handle_type_def}{ADC\_HandleTypeDef}}\ *hadc);}
+\DoxyCodeLine{01526\ \textcolor{preprocessor}{\#if\ defined(ADC\_MULTIMODE\_SUPPORT)}}
+\DoxyCodeLine{01527\ HAL\_StatusTypeDef\ \ \ \ \ \ \ HAL\_ADCEx\_RegularMultiModeStop\_DMA(\mbox{\hyperlink{struct_a_d_c___handle_type_def}{ADC\_HandleTypeDef}}\ *hadc);}
+\DoxyCodeLine{01528\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ ADC\_MULTIMODE\_SUPPORT\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{01529\ }
+\DoxyCodeLine{01537\ \textcolor{comment}{/*\ Peripheral\ Control\ functions\ ***********************************************/}}
+\DoxyCodeLine{01538\ HAL\_StatusTypeDef\ \ \ \ \ \ \ HAL\_ADCEx\_InjectedConfigChannel(\mbox{\hyperlink{struct_a_d_c___handle_type_def}{ADC\_HandleTypeDef}}\ *hadc,}
+\DoxyCodeLine{01539\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_a_d_c___injection_conf_type_def}{ADC\_InjectionConfTypeDef}}\ *pConfigInjected);}
+\DoxyCodeLine{01540\ \textcolor{preprocessor}{\#if\ defined(ADC\_MULTIMODE\_SUPPORT)}}
+\DoxyCodeLine{01541\ HAL\_StatusTypeDef\ \ \ \ \ \ \ HAL\_ADCEx\_MultiModeConfigChannel(\mbox{\hyperlink{struct_a_d_c___handle_type_def}{ADC\_HandleTypeDef}}\ *hadc,}
+\DoxyCodeLine{01542\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ ADC\_MultiModeTypeDef\ *pMultimode);}
+\DoxyCodeLine{01543\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ ADC\_MULTIMODE\_SUPPORT\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{01544\ }
+\DoxyCodeLine{01545\ HAL\_StatusTypeDef\ \ \ \ \ \ \ HAL\_ADCEx\_EnableInjectedQueue(\mbox{\hyperlink{struct_a_d_c___handle_type_def}{ADC\_HandleTypeDef}}\ *hadc);}
+\DoxyCodeLine{01546\ HAL\_StatusTypeDef\ \ \ \ \ \ \ HAL\_ADCEx\_DisableInjectedQueue(\mbox{\hyperlink{struct_a_d_c___handle_type_def}{ADC\_HandleTypeDef}}\ *hadc);}
+\DoxyCodeLine{01547\ HAL\_StatusTypeDef\ \ \ \ \ \ \ HAL\_ADCEx\_DisableVoltageRegulator(\mbox{\hyperlink{struct_a_d_c___handle_type_def}{ADC\_HandleTypeDef}}\ *hadc);}
+\DoxyCodeLine{01548\ HAL\_StatusTypeDef\ \ \ \ \ \ \ HAL\_ADCEx\_EnterADCDeepPowerDownMode(\mbox{\hyperlink{struct_a_d_c___handle_type_def}{ADC\_HandleTypeDef}}\ *hadc);}
+\DoxyCodeLine{01549\ }
+\DoxyCodeLine{01566\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{01567\ \}}
+\DoxyCodeLine{01568\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01569\ }
+\DoxyCodeLine{01570\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ STM32G4xx\_HAL\_ADC\_EX\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}
