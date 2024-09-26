@@ -31,7 +31,16 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-
+#define UART_TX_BUFFER_SIZE 64
+#define UART_RX_BUFFER_SIZE 1
+#define CMD_BUFFER_SIZE 64
+#define MAX_ARGS 9
+// LF = line feed, saut de ligne
+#define ASCII_LF 0x0A
+// CR = carriage return, retour chariot
+#define ASCII_CR 0x0D
+// DEL = delete
+#define ASCII_DEL 0x7F
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -50,7 +59,35 @@ UART_HandleTypeDef huart2;
 UART_HandleTypeDef huart3;
 
 /* USER CODE BEGIN PV */
-
+uint8_t prompt[]="user@Nucleo-STM32G431>>";
+uint8_t started[]=
+		"\r\n*-----------------------------*"
+		"\r\n| Welcome on Nucleo-STM32G431 |"
+		"\r\n*-----------------------------*"
+		"\r\n";
+uint8_t newline[]="\r\n";
+uint8_t cmdNotFound[]="Command not found\r\n";
+uint32_t uartRxReceived;
+uint8_t uartRxBuffer[UART_RX_BUFFER_SIZE];
+uint8_t uartTxBuffer[UART_TX_BUFFER_SIZE];
+uint8_t help[]=
+		"\r\n*-----------------------------*"
+		"\r\n| List of available commands |"
+		"\r\n| help |"
+		"\r\n| pinout |"
+		"\r\n| powerOn |"
+		"\r\n| powerOff |"
+		"\r\n*-----------------------------*"
+		"\r\n";
+uint8_t pinout[]=
+		"\r\n*-----------------------------*"
+		"\r\n| List of available pins |"
+		"\r\n| PA2 = USART2_TX |"
+		"\r\n| PA3 = USART2_RX |"
+		"\r\n*-----------------------------*"
+		"\r\n";
+uint8_t powerOn[]= "Motor On\r\n";
+uint8_t powerOff[]="Motor Off\r\n";
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -79,7 +116,12 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
-
+	char	 	cmdBuffer[CMD_BUFFER_SIZE];
+	int 		idx_cmd;
+	char* 		argv[MAX_ARGS];
+	int		 	argc = 0;
+	char*		token;
+	int 		newCmdReady = 0;
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -108,12 +150,97 @@ int main(void)
   MX_USART3_UART_Init();
   /* USER CODE BEGIN 2 */
 
+//void Shell_Init(void){
+  memset(argv,NULL,MAX_ARGS*sizeof(char*));
+  memset(cmdBuffer,NULL,CMD_BUFFER_SIZE*sizeof(char));
+  memset(uartRxBuffer,NULL,UART_RX_BUFFER_SIZE*sizeof(char));
+  memset(uartTxBuffer,NULL,UART_TX_BUFFER_SIZE*sizeof(char));
+
+  HAL_UART_Receive_IT(&huart2, uartRxBuffer, UART_RX_BUFFER_SIZE);
+  HAL_Delay(10);
+  HAL_UART_Transmit(&huart2, started, sizeof(started), HAL_MAX_DELAY);
+  HAL_UART_Transmit(&huart2, prompt, sizeof(prompt), HAL_MAX_DELAY);
+//}
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  /**
+	   * @brief Vérifie que le caractère a été reçu : uartRxReceived mis à 1
+	   */
+	  	  if(uartRxReceived)
+	  	  {
+	  		  /**
+	  		   * @brief Echo du caractère sur la console
+	  		   */
+	  		  switch(uartRxBuffer[0]){
+	  		  // Nouvelle ligne, instruction à traiter
+	  		  case ASCII_CR:
+	  			  HAL_UART_Transmit(&huart2, newline, sizeof(newline), HAL_MAX_DELAY);
+	  			  cmdBuffer[idx_cmd] = '\0';
+	  			  argc = 0;
+	  			  token = strtok(cmdBuffer, " ");
+	  			  while(token!=NULL){
+	  				  argv[argc++] = token;
+	  				  token = strtok(NULL, " ");
+	  			  }
+
+	  			  idx_cmd = 0;
+	  			  newCmdReady = 1;
+	  			  break;
+	  		  // Suppression du dernier caractère
+	  		  case ASCII_DEL:
+	  			  cmdBuffer[idx_cmd--] = '\0';
+	  			  HAL_UART_Transmit(&huart2, uartRxBuffer, UART_RX_BUFFER_SIZE, HAL_MAX_DELAY);
+	  			  break;
+	  	      // Nouveau caractère
+	  		  default:
+	  			  cmdBuffer[idx_cmd++] = uartRxBuffer[0];
+	  			  HAL_UART_Transmit(&huart2, uartRxBuffer, UART_RX_BUFFER_SIZE, HAL_MAX_DELAY);
+	  		  }
+	  		  uartRxReceived = 0;
+	  	  }
+
+	  	  if(newCmdReady){
+	  		  if(strcmp(argv[0],"set")==0){
+	  			  if(strcmp(argv[1],"PA5")==0){
+	  				  HAL_GPIO_WritePin(GREEN_LED_GPIO_Port, GREEN_LED_Pin, atoi(argv[2]));
+	  				  sprintf(uartTxBuffer,"Switch on/off led : %d\r\n",atoi(argv[2]));
+	  				  HAL_UART_Transmit(&huart2, uartTxBuffer, 32, HAL_MAX_DELAY);
+	  			  }
+	  			  else{
+	  				  HAL_UART_Transmit(&huart2, cmdNotFound, sizeof(cmdNotFound), HAL_MAX_DELAY);
+	  			  }
+	  		  }
+	  		  else if(strcmp(argv[0],"pinout")==0)
+	  		  {
+	  			  HAL_UART_Transmit(&huart2, pinout, sizeof(pinout), HAL_MAX_DELAY);
+	  		  }
+	  		  else if(strcmp(argv[0],"help")==0)
+	  		  {
+	  			  HAL_UART_Transmit(&huart2, help, sizeof(help), HAL_MAX_DELAY);
+	  		  }
+	  		  else if(strcmp(argv[0],"powerOn")==0)
+	  		  {
+	  			  HAL_UART_Transmit(&huart2, powerOn, sizeof(powerOn), HAL_MAX_DELAY);
+	  		  }
+	  		  else if(strcmp(argv[0],"powerOff")==0)
+	  		  {
+	  			  HAL_UART_Transmit(&huart2, powerOff, sizeof(powerOff), HAL_MAX_DELAY);
+	  		  }
+	  		  else if(strcmp(argv[0],"get")==0)
+	  		  {
+	  			  HAL_UART_Transmit(&huart2, cmdNotFound, sizeof(cmdNotFound), HAL_MAX_DELAY);
+	  		  }
+	  		  else{
+	  			  HAL_UART_Transmit(&huart2, cmdNotFound, sizeof(cmdNotFound), HAL_MAX_DELAY);
+	  		  }
+	  			  HAL_UART_Transmit(&huart2, prompt, sizeof(prompt), HAL_MAX_DELAY);
+	  			  newCmdReady = 0;
+	  	  }
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -313,9 +440,9 @@ static void MX_TIM1_Init(void)
 
   /* USER CODE END TIM1_Init 1 */
   htim1.Instance = TIM1;
-  htim1.Init.Prescaler = 0;
+  htim1.Init.Prescaler = 8499;
   htim1.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim1.Init.Period = 65535;
+  htim1.Init.Period = 20000;
   htim1.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim1.Init.RepetitionCounter = 0;
   htim1.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
@@ -331,7 +458,7 @@ static void MX_TIM1_Init(void)
     Error_Handler();
   }
   sConfigOC.OCMode = TIM_OCMODE_PWM1;
-  sConfigOC.Pulse = 0;
+  sConfigOC.Pulse = 1000;
   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
   sConfigOC.OCNPolarity = TIM_OCNPOLARITY_HIGH;
   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
@@ -341,6 +468,7 @@ static void MX_TIM1_Init(void)
   {
     Error_Handler();
   }
+  sConfigOC.Pulse = 0;
   if (HAL_TIM_PWM_ConfigChannel(&htim1, &sConfigOC, TIM_CHANNEL_2) != HAL_OK)
   {
     Error_Handler();
@@ -349,6 +477,7 @@ static void MX_TIM1_Init(void)
   {
     Error_Handler();
   }
+  HAL_TIMEx_EnableDeadTimePreload(&htim1);
   sBreakDeadTimeConfig.OffStateRunMode = TIM_OSSR_DISABLE;
   sBreakDeadTimeConfig.OffStateIDLEMode = TIM_OSSI_DISABLE;
   sBreakDeadTimeConfig.LockLevel = TIM_LOCKLEVEL_OFF;
@@ -532,7 +661,7 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOD_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(USR_LED_GPIO_Port, USR_LED_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GREEN_LED_GPIO_Port, GREEN_LED_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(NRST_SafetyUC_GPIO_Port, NRST_SafetyUC_Pin, GPIO_PIN_RESET);
@@ -543,12 +672,12 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(USR_BTN_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : USR_LED_Pin */
-  GPIO_InitStruct.Pin = USR_LED_Pin;
+  /*Configure GPIO pin : GREEN_LED_Pin */
+  GPIO_InitStruct.Pin = GREEN_LED_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(USR_LED_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(GREEN_LED_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pin : NRST_SafetyUC_Pin */
   GPIO_InitStruct.Pin = NRST_SafetyUC_Pin;
@@ -566,7 +695,10 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-
+void HAL_UART_RxCpltCallback (UART_HandleTypeDef * huart){
+	uartRxReceived = 1;
+	HAL_UART_Receive_IT(&huart2, uartRxBuffer, UART_RX_BUFFER_SIZE);
+}
 /* USER CODE END 4 */
 
 /**
