@@ -22,6 +22,9 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include "motor.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -31,16 +34,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define UART_TX_BUFFER_SIZE 64
-#define UART_RX_BUFFER_SIZE 1
-#define CMD_BUFFER_SIZE 64
-#define MAX_ARGS 9
-// LF = line feed, saut de ligne
-#define ASCII_LF 0x0A
-// CR = carriage return, retour chariot
-#define ASCII_CR 0x0D
-// DEL = delete
-#define ASCII_DEL 0x7F
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -51,6 +45,7 @@
 /* Private variables ---------------------------------------------------------*/
 ADC_HandleTypeDef hadc1;
 ADC_HandleTypeDef hadc2;
+DMA_HandleTypeDef hdma_adc1;
 
 TIM_HandleTypeDef htim1;
 TIM_HandleTypeDef htim3;
@@ -78,6 +73,7 @@ uint8_t help[]=
 		"\r\n| powerOn |"
 		"\r\n| powerOff |"
 		"\r\n| speed |"
+		"\r\n| current |"
 		"\r\n*-----------------------------*"
 		"\r\n";
 uint8_t pinout[]=
@@ -90,15 +86,12 @@ uint8_t pinout[]=
 uint8_t powerOn[]= "Motor On\r\n";
 uint8_t powerOff[]="Motor Off\r\n";
 
-/**
- * @brief : Init rapport cyclique PWM
- */
-uint8_t alpha=60;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
+static void MX_DMA_Init(void);
 static void MX_ADC2_Init(void);
 static void MX_ADC1_Init(void);
 static void MX_TIM1_Init(void);
@@ -148,6 +141,7 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_ADC2_Init();
   MX_ADC1_Init();
   MX_TIM1_Init();
@@ -168,14 +162,7 @@ int main(void)
   HAL_UART_Transmit(&huart2, prompt, sizeof(prompt), HAL_MAX_DELAY);
 //}
 
-/**
- * @brief : Init TIM PWM complémentaire
- */
-  HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
-  HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
 
-  HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_1);
-  HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_2);
 
   /* USER CODE END 2 */
 
@@ -184,12 +171,12 @@ int main(void)
   while (1)
   {
 	  /**
-	   * @brief Vérifie que le caractère a été reçu : uartRxReceived mis à 1
+	   * Vérifie que le caractère a été reçu : uartRxReceived mis à 1
 	   */
 	  	  if(uartRxReceived)
 	  	  {
 	  		  /**
-	  		   * @brief Echo du caractère sur la console
+	  		   * Echo du caractère sur la console
 	  		   */
 	  		  switch(uartRxBuffer[0]){
 	  		  // Nouvelle ligne, instruction à traiter
@@ -241,29 +228,32 @@ int main(void)
 	  		  else if(strcmp(argv[0],"powerOn")==0)
 	  		  {
 	  			  HAL_UART_Transmit(&huart2, powerOn, sizeof(powerOn), HAL_MAX_DELAY);
+	  			  motor_start();
 	  		  }
 	  		  else if(strcmp(argv[0],"powerOff")==0)
 	  		  {
 	  			  HAL_UART_Transmit(&huart2, powerOff, sizeof(powerOff), HAL_MAX_DELAY);
+	  			  motor_off();
 	  		  }
 	  		  else if(strcmp(argv[0],"get")==0)
 	  		  {
 	  			  HAL_UART_Transmit(&huart2, cmdNotFound, sizeof(cmdNotFound), HAL_MAX_DELAY);
 	  		  }
 	  		  /**
-	  		   * @brief : Speed control
-	  		   * Entrer speed XXXX dans le terminal
+	  		   * Speed control
+	  		   * Entrer speed XXXX dans le terminal (entre 0 et 8499)
 	  		   * XXXX est converti en rapport cyclique
 	  		   */
 	  		  else if(strcmp(argv[0],"speed")==0){
-	  			  alpha = atoi(argv[1]);
-	  			  if (alpha > 100)
-	  			  {
-	  				  alpha = 100;
-	  			  }
-	  			  sprintf(uartTxBuffer,"Speed : %d \r\n", alpha);
+	  			  motor_speed(atoi(argv[1]));
+	  			  sprintf(uartTxBuffer,"Speed : %d \r\n", atoi(argv[1]));
 	  			  HAL_UART_Transmit(&huart2, uartTxBuffer, sizeof(uartTxBuffer), HAL_MAX_DELAY);
 	  		  }
+
+	  		  else if(strcmp(argv[0],"current")==0){
+	  			  measure_current();
+	  		  }
+
 	  		  else{
 	  			  HAL_UART_Transmit(&huart2, cmdNotFound, sizeof(cmdNotFound), HAL_MAX_DELAY);
 	  		  }
@@ -271,11 +261,7 @@ int main(void)
 	  			  newCmdReady = 0;
 	  	  }
 
-	  	  /**
-	  	   * @brief : Comparaison PWM
-	  	   */
-	  	  __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, 8499*alpha/100);
-	  	  __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, 8499-(8499*alpha/100));
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -680,6 +666,26 @@ static void MX_USART3_UART_Init(void)
   /* USER CODE BEGIN USART3_Init 2 */
 
   /* USER CODE END USART3_Init 2 */
+
+}
+
+/**
+  * Enable DMA controller clock
+  */
+static void MX_DMA_Init(void)
+{
+
+  /* DMA controller clock enable */
+  __HAL_RCC_DMAMUX1_CLK_ENABLE();
+  __HAL_RCC_DMA1_CLK_ENABLE();
+
+  /* DMA interrupt init */
+  /* DMA1_Channel1_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Channel1_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Channel1_IRQn);
+  /* DMAMUX_OVR_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMAMUX_OVR_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(DMAMUX_OVR_IRQn);
 
 }
 
