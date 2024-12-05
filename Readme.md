@@ -19,6 +19,10 @@ L'objectif dans ce second TP est de:
   - Faire un premier essai de commande moteur
 Nous avons généré les PWM à partir du TIM1 et nous avons inclu le deadTime à 160
 ![image](https://github.com/user-attachments/assets/dbc310a5-9e89-455d-9348-2ff85f9bf0ce)
+![image](https://github.com/user-attachments/assets/32708df7-134d-43fe-9078-3b5f885a2dd2)
+Nous avons obtenus les PWM suivantes:
+
+
 
 
 
