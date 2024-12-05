@@ -1,0 +1,5 @@
+../Core/Src/motor.c:32:6:motor_speed	24	static
+../Core/Src/motor.c:73:6:motor_on	8	static
+../Core/Src/motor.c:87:6:motor_off	8	static
+../Core/Src/motor.c:101:6:motor_start	8	static
+../Core/Src/motor.c:114:6:measure_current	120	static

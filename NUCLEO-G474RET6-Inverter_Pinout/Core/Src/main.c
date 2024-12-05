@@ -81,10 +81,16 @@ uint8_t pinout[]=
 		"\r\n| List of available pins |"
 		"\r\n| PA2 = USART2_TX |"
 		"\r\n| PA3 = USART2_RX |"
+		"\r\n| PA8 = V_PWM_H |"
+		"\r\n| PA9 = U_PWM_H |"
+		"\r\n| PB13 = V_PWM_L |"
+		"\r\n| PB14 = U_PWM_L |"
 		"\r\n*-----------------------------*"
 		"\r\n";
 uint8_t powerOn[]= "Motor On\r\n";
 uint8_t powerOff[]="Motor Off\r\n";
+
+uint8_t adc_flag=0;
 
 /* USER CODE END PV */
 
@@ -265,6 +271,7 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+
   }
   /* USER CODE END 3 */
 }
@@ -343,12 +350,12 @@ static void MX_ADC1_Init(void)
   hadc1.Init.ScanConvMode = ADC_SCAN_DISABLE;
   hadc1.Init.EOCSelection = ADC_EOC_SINGLE_CONV;
   hadc1.Init.LowPowerAutoWait = DISABLE;
-  hadc1.Init.ContinuousConvMode = DISABLE;
+  hadc1.Init.ContinuousConvMode = ENABLE;
   hadc1.Init.NbrOfConversion = 1;
   hadc1.Init.DiscontinuousConvMode = DISABLE;
   hadc1.Init.ExternalTrigConv = ADC_SOFTWARE_START;
   hadc1.Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_NONE;
-  hadc1.Init.DMAContinuousRequests = DISABLE;
+  hadc1.Init.DMAContinuousRequests = ENABLE;
   hadc1.Init.Overrun = ADC_OVR_DATA_PRESERVED;
   hadc1.Init.OversamplingMode = DISABLE;
   if (HAL_ADC_Init(&hadc1) != HAL_OK)
@@ -746,6 +753,11 @@ void HAL_UART_RxCpltCallback (UART_HandleTypeDef * huart){
 	uartRxReceived = 1;
 	HAL_UART_Receive_IT(&huart2, uartRxBuffer, UART_RX_BUFFER_SIZE);
 }
+
+void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc)
+{
+	adc_flag=1;
+}
 /* USER CODE END 4 */
 
 /**
@@ -768,6 +780,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 
   /* USER CODE END Callback 1 */
 }
+
 
 /**
   * @brief  This function is executed in case of error occurrence.
